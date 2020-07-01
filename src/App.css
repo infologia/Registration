@@ -1,16 +1,36 @@
-.App {
+.App{
+  font-size: 14px;
+  padding-top: 60px;
+background: #12c2e9; 
+background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+
+}
+.form-container{
+  background: #fff;
+  border-radius: 20px;
+  padding:30px 35px 30px 30px;
+  max-width: 1250px;
+  margin: 0 auto;
+  box-shadow: 0 15px 16px .17px rgba(0, 0, 0, 05);
+}
+.form-containers{
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px 60px;
+  max-width: 1250px;
+  margin: 0 auto;
+  box-shadow: 0 15px 16px .17px rgba(0, 0, 0, 05);
+}
+.container{
+  max-width: 1217px;
+}
+h1
+{
   text-align: center;
 }
-
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  height: 12vmin;
 }
 
 .App-header {
@@ -23,16 +43,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  color: #09d3ac;
 }
