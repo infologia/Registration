@@ -59,8 +59,10 @@ else
     continue=e=>{
         e.preventDefault();
       const isValid=this.validateForm();
-    this.props.nextStep(); 
-    
+      if(isValid)
+      {
+        this.props.nextStep(); 
+      }
       };
 
       validateForm() {
@@ -90,9 +92,7 @@ else
     bridefatherageerror="Please enter father age";
     isValid=false;
   }
-
-
-  
+ 
   if(bridefatherlivingstatus===""||bridefatherlivingstatus===undefined)
   {
     bridefatherlivingstatuserror="Please enter  father living status";

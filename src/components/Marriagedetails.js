@@ -21,7 +21,9 @@ export class  Marriagedetails extends Component
       continue=e=>{
         e.preventDefault();
       const isValid=this.validateForm();
+      if(isValid){
        this.props.nextStep(); 
+}
     }
 
     back = e => {

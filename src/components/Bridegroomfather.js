@@ -60,8 +60,10 @@ state={
 continue=e=>{
   e.preventDefault();
 const isValid=this.validateForm();
-this.props.nextStep(); 
-
+if(isValid)
+{
+  this.props.nextStep();
+}
 };
 
 back = e => {

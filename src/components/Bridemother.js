@@ -85,9 +85,9 @@ else
       continue=e=>{
         e.preventDefault();
       const isValid=this.validateForm();
-     
+     if(isValid){
        this.props.nextStep(); 
-    
+      }
       };
 
       validateForm() {

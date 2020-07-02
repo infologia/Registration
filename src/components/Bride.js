@@ -8,7 +8,7 @@ export class Bride extends Component
     let calage="";
     const {value:{BrideDateofbirth}}=this.props;
    this.state={
-    calage:"0"
+    calage:""
    }
   
   if(BrideDateofbirth!==""&&BrideDateofbirth!==undefined)
@@ -51,7 +51,10 @@ Village3error:"",
       continue=e=>{
         e.preventDefault();
       const isValid=this.validateForm();
-       this.props.nextStep(); 
+      if(isValid)
+      {
+        this.props.nextStep();
+      }      
       };
 
       back = e => {

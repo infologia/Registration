@@ -107,7 +107,7 @@ let State2error="";
 let District2error="";
 let Country2error="";
   let Pincode2error="";
-  alert(MotherName);
+
   if(MotherName===""||MotherName===undefined)
   {
     MotherNameerror="Please enter Mother name";

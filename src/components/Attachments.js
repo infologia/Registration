@@ -62,297 +62,299 @@ export class Attachements extends Component
     
         submit = e =>{
           e.preventDefault();
-         
-          const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
-              maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,
-              Taluk,Fathername,FatherAge,FatherOccupation,Fatherreligion,groomfatherlivingstatus,fatherschooseaddress,Street1,
-              Village1,Taluk1,District1,State1,Country1,Pincode1,MotherName,Motherreligion,groommotherlivingstatus,MotherAge,MotherOccupation,motherchooseaddress,
-              Street2,Village2,Taluk2,District2,State2,Country2,Pincode2,bridename,BrideNationality,brideresidential,bridereligion,bridecaste,BrideDateofbirth,brideemployername,
-              bridedesignation,bridemaritalstatus,bridemobilenumber,bridewhatsapp,brideemail,Street3,Village3,Taluk3,District3,
-              State3,Country3,Pincode3,bridepassport,bridefather,bridefatherreligion,bridefatherlivingstatus,bridefatherage,bridefatheroccupation,
-              bridebridefatherchooseaddress,Street4,Village4,Taluk4,District4,State4,Country4,Pincode4,bridemother,bridemotherage,bridemotherreligion,bridemotheroccupation,bridemotherlivingstatuss,
-              bridemotherchooseaddress,Street5,Village5,Taluk5,District5,State5,Country5,Pincode5,placeofmarriage,marriageplacename,Street6,Village6,Taluk6,District6,State6,Country6,Pincode6,
-              marriagedate,whosolemnimarriage,Street7,Village7,Taluk7,District7,State7,Country7,Pincode7,  bridemotherpresent,  bridefatherpresent,groommother,groomfather,
-              relationship,witnessname,fatherhusbandname,Street8,Village8,Taluk8,District8,State8,Country8,Pincode8,idcard,idcardno,
-              Passport,Marksheet,Rationcard,Aadharcard,Voterid,Drivinglicence,Passportsizephoto,Divorcecopy,
-              MarriageCertificate,Spousedeathcertificate,Singlestatuscertificate,Bridepassport,BrideMarksheet,
-              BrideRationcard,BrideAaharcard,BrideVoterid,BrideDrivinglicence,BridePassportsizephoto,
-              BrideDivorcecopy,BrideMarriageertificate,BrideSpousedeadcertificate,BrideSinglestatuscertificate,
-              Invitation,Marriagereceipt}}=this.props;
-    let url="http://ec2-18-221-198-250.us-east-2.compute.amazonaws.com:9001/weddingform";          
+          const isValid=this.validateForm();
+      if(isValid){
+        const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
+          maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,
+          Taluk,Fathername,FatherAge,FatherOccupation,Fatherreligion,groomfatherlivingstatus,fatherschooseaddress,Street1,
+          Village1,Taluk1,District1,State1,Country1,Pincode1,MotherName,Motherreligion,groommotherlivingstatus,MotherAge,MotherOccupation,motherchooseaddress,
+          Street2,Village2,Taluk2,District2,State2,Country2,Pincode2,bridename,BrideNationality,brideresidential,bridereligion,bridecaste,BrideDateofbirth,brideemployername,
+          bridedesignation,bridemaritalstatus,bridemobilenumber,bridewhatsapp,brideemail,Street3,Village3,Taluk3,District3,
+          State3,Country3,Pincode3,bridepassport,bridefather,bridefatherreligion,bridefatherlivingstatus,bridefatherage,bridefatheroccupation,
+          bridebridefatherchooseaddress,Street4,Village4,Taluk4,District4,State4,Country4,Pincode4,bridemother,bridemotherage,bridemotherreligion,bridemotheroccupation,bridemotherlivingstatuss,
+          bridemotherchooseaddress,Street5,Village5,Taluk5,District5,State5,Country5,Pincode5,placeofmarriage,marriageplacename,Street6,Village6,Taluk6,District6,State6,Country6,Pincode6,
+          marriagedate,whosolemnimarriage,Street7,Village7,Taluk7,District7,State7,Country7,Pincode7,  bridemotherpresent,  bridefatherpresent,groommother,groomfather,
+          relationship,witnessname,fatherhusbandname,Street8,Village8,Taluk8,District8,State8,Country8,Pincode8,idcard,idcardno,
+          Passport,Marksheet,Rationcard,Aadharcard,Voterid,Drivinglicence,Passportsizephoto,Divorcecopy,
+          MarriageCertificate,Spousedeathcertificate,Singlestatuscertificate,Bridepassport,BrideMarksheet,
+          BrideRationcard,BrideAaharcard,BrideVoterid,BrideDrivinglicence,BridePassportsizephoto,
+          BrideDivorcecopy,BrideMarriageertificate,BrideSpousedeadcertificate,BrideSinglestatuscertificate,
+          Invitation,Marriagereceipt}}=this.props;
+let url="http://ec2-18-221-198-250.us-east-2.compute.amazonaws.com:9001/weddingform";          
 let access_token=localStorage.getItem('token');
- const formData = new FormData();
+const formData = new FormData();
 
-            formData.append('Dateofmarriage', Dateofmarriage); 
-            formData.append('Name', Name);
-            formData.append('Nationality',Nationality);
-            formData.append('ResidentialStatus',ResidentialStatus);
-            formData.append('Religion',Religion);
-            formData.append('Caste',Caste);
-            formData.append('Dateofbirth',DOB);
-            formData.append('Employername',Employername);
-            formData.append('Designation',Designation);
-            formData.append('MaritalStatusBeforeMarriage', maritalstatus);
-            formData.append('Mobileno',Mobileno);
-            formData.append('whatsappnumber',whatsappnumber);
-            formData.append('Email',emailaddress);
-            formData.append('ResiAddress.Street',Street);
-            formData.append('ResiAddress.village',Village);
-            formData.append('ResiAddress.Taluk',Taluk);
-            formData.append('ResiAddress.District',District);
-            formData.append('ResiAddress.State',State);
-            formData.append('ResiAddress.Country',Country);
-            formData.append('ResiAddress.Pincode',Pincode);
-            formData.append('Passportno',Passportno);
-            formData.append('Fathername',Fathername);
-            formData.append('Fatherreligion',Fatherreligion);
-            formData.append('Livingstatus','1');
-            formData.append('FatherAge',FatherAge);
-            formData.append('FatherOccupation',FatherOccupation);
+        formData.append('Dateofmarriage', Dateofmarriage); 
+        formData.append('Name', Name);
+        formData.append('Nationality',Nationality);
+        formData.append('ResidentialStatus',ResidentialStatus);
+        formData.append('Religion',Religion);
+        formData.append('Caste',Caste);
+        formData.append('Dateofbirth',DOB);
+        formData.append('Employername',Employername);
+        formData.append('Designation',Designation);
+        formData.append('MaritalStatusBeforeMarriage', maritalstatus);
+        formData.append('Mobileno',Mobileno);
+        formData.append('whatsappnumber',whatsappnumber);
+        formData.append('Email',emailaddress);
+        formData.append('ResiAddress.Street',Street);
+        formData.append('ResiAddress.village',Village);
+        formData.append('ResiAddress.Taluk',Taluk);
+        formData.append('ResiAddress.District',District);
+        formData.append('ResiAddress.State',State);
+        formData.append('ResiAddress.Country',Country);
+        formData.append('ResiAddress.Pincode',Pincode);
+        formData.append('Passportno',Passportno);
+        formData.append('Fathername',Fathername);
+        formData.append('Fatherreligion',Fatherreligion);
+        formData.append('Livingstatus','1');
+        formData.append('FatherAge',FatherAge);
+        formData.append('FatherOccupation',FatherOccupation);
 
-            if(fatherschooseaddress==="1")
-            {
-              formData.append('Fatheraddress.Street',Street);
-              formData.append('Fatheraddress.village',Village);
-              formData.append('Fatheraddress.Taluk',Taluk);
-              formData.append('Fatheraddress.District',District);
-              formData.append('Fatheraddress.State',State);
-              formData.append('Fatheraddress.Country',Country);
-              formData.append('Fatheraddress.Pincode',Pincode);
-            }
-            else
-            {
-              formData.append('Fatheraddress.Street',Street1);
-              formData.append('Fatheraddress.village',Village1);
-              formData.append('Fatheraddress.Taluk',Taluk1);
-              formData.append('Fatheraddress.District',District1);
-              formData.append('Fatheraddress.State',State1);
-              formData.append('Fatheraddress.Country',Country1);
-              formData.append('Fatheraddress.Pincode',Pincode1);
-            }
-           
+        if(fatherschooseaddress==="1")
+        {
+          formData.append('Fatheraddress.Street',Street);
+          formData.append('Fatheraddress.village',Village);
+          formData.append('Fatheraddress.Taluk',Taluk);
+          formData.append('Fatheraddress.District',District);
+          formData.append('Fatheraddress.State',State);
+          formData.append('Fatheraddress.Country',Country);
+          formData.append('Fatheraddress.Pincode',Pincode);
+        }
+        else
+        {
+          formData.append('Fatheraddress.Street',Street1);
+          formData.append('Fatheraddress.village',Village1);
+          formData.append('Fatheraddress.Taluk',Taluk1);
+          formData.append('Fatheraddress.District',District1);
+          formData.append('Fatheraddress.State',State1);
+          formData.append('Fatheraddress.Country',Country1);
+          formData.append('Fatheraddress.Pincode',Pincode1);
+        }
+       
 
-            formData.append('FLivingStatus',groomfatherlivingstatus);
-            formData.append('MotherName',MotherName);
-            formData.append('Motherreligion',Motherreligion);
-            formData.append('MLivingStatus',groommotherlivingstatus);
-            formData.append('MotherAge',MotherAge);
-            formData.append('MotherOccupation',MotherOccupation);
+        formData.append('FLivingStatus',groomfatherlivingstatus);
+        formData.append('MotherName',MotherName);
+        formData.append('Motherreligion',Motherreligion);
+        formData.append('MLivingStatus',groommotherlivingstatus);
+        formData.append('MotherAge',MotherAge);
+        formData.append('MotherOccupation',MotherOccupation);
 
 if(motherchooseaddress==="1"&&fatherschooseaddress==="1")
 {
-  formData.append('Motheraddress.Street',Street);
-  formData.append('Motheraddress.village',Village);
-  formData.append('Motheraddress.Taluk',Taluk);
-  formData.append('Motheraddress.District',District);
-  formData.append('Motheraddress.State',State);
-  formData.append('Motheraddress.Country',Country);
-  formData.append('Motheraddress.Pincode',Pincode);
+formData.append('Motheraddress.Street',Street);
+formData.append('Motheraddress.village',Village);
+formData.append('Motheraddress.Taluk',Taluk);
+formData.append('Motheraddress.District',District);
+formData.append('Motheraddress.State',State);
+formData.append('Motheraddress.Country',Country);
+formData.append('Motheraddress.Pincode',Pincode);
 }
 else if(motherchooseaddress==="2")
 {
-  formData.append('Motheraddress.Street',Street1);
-  formData.append('Motheraddress.village',Village1);
-  formData.append('Motheraddress.Taluk',Taluk1);
-  formData.append('Motheraddress.District',District1);
-  formData.append('Motheraddress.State',State1);
-  formData.append('Motheraddress.Country',Country1);
-  formData.append('Motheraddress.Pincode',Pincode1);
+formData.append('Motheraddress.Street',Street1);
+formData.append('Motheraddress.village',Village1);
+formData.append('Motheraddress.Taluk',Taluk1);
+formData.append('Motheraddress.District',District1);
+formData.append('Motheraddress.State',State1);
+formData.append('Motheraddress.Country',Country1);
+formData.append('Motheraddress.Pincode',Pincode1);
 }
 else{
-  formData.append('Motheraddress.Street',Street2);
-  formData.append('Motheraddress.village',Village2);
-  formData.append('Motheraddress.Taluk',Taluk2);
-  formData.append('Motheraddress.District',District2);
-  formData.append('Motheraddress.State',State2);
-  formData.append('Motheraddress.Country',Country2);
-  formData.append('Motheraddress.Pincode',Pincode2);
+formData.append('Motheraddress.Street',Street2);
+formData.append('Motheraddress.village',Village2);
+formData.append('Motheraddress.Taluk',Taluk2);
+formData.append('Motheraddress.District',District2);
+formData.append('Motheraddress.State',State2);
+formData.append('Motheraddress.Country',Country2);
+formData.append('Motheraddress.Pincode',Pincode2);
 }
-            formData.append('BrideName',bridename);
-            formData.append('BrideNationality',BrideNationality);
-            formData.append('BrideResidentialStatus',brideresidential);
-            formData.append('BrideReligion',bridereligion);
-            formData.append('BrideCaste',bridecaste);
-            formData.append('BrideDateofbirth',BrideDateofbirth);
-            formData.append('BrideEmployername',brideemployername);
-            formData.append('BrideDesignation',bridedesignation);
-            formData.append('BrideMaritalStatusBeforeMarriage',bridemaritalstatus);
-            formData.append('BrideMobileno',bridemobilenumber);
-            formData.append('Bridewhatsappnumber',bridewhatsapp);
-            formData.append('BrideEmail',brideemail);
-            formData.append('BrideResiAddress.Street',Street3);
-            formData.append('BrideResiAddress.village',Village3);
-            formData.append('BrideResiAddress.Taluk3',Taluk3);
-            formData.append('BrideResiAddress.District',District3);
-            formData.append('BrideResiAddress.State',State3);
-            formData.append('BrideResiAddress.Country',Country3);
-            formData.append('BrideResiAddress.Pincode',Pincode3);
-            formData.append('BridePassportno',bridepassport);
-            formData.append('BrideFathername',bridefather);
-            formData.append('BrideFatherreligion',bridefatherreligion);
-            formData.append('BrideLivingStatus','1');
-            formData.append('BrideFatherAge',bridefatherage);
-            formData.append('BrideFatherOccupation',bridefatheroccupation);
+        formData.append('BrideName',bridename);
+        formData.append('BrideNationality',BrideNationality);
+        formData.append('BrideResidentialStatus',brideresidential);
+        formData.append('BrideReligion',bridereligion);
+        formData.append('BrideCaste',bridecaste);
+        formData.append('BrideDateofbirth',BrideDateofbirth);
+        formData.append('BrideEmployername',brideemployername);
+        formData.append('BrideDesignation',bridedesignation);
+        formData.append('BrideMaritalStatusBeforeMarriage',bridemaritalstatus);
+        formData.append('BrideMobileno',bridemobilenumber);
+        formData.append('Bridewhatsappnumber',bridewhatsapp);
+        formData.append('BrideEmail',brideemail);
+        formData.append('BrideResiAddress.Street',Street3);
+        formData.append('BrideResiAddress.village',Village3);
+        formData.append('BrideResiAddress.Taluk3',Taluk3);
+        formData.append('BrideResiAddress.District',District3);
+        formData.append('BrideResiAddress.State',State3);
+        formData.append('BrideResiAddress.Country',Country3);
+        formData.append('BrideResiAddress.Pincode',Pincode3);
+        formData.append('BridePassportno',bridepassport);
+        formData.append('BrideFathername',bridefather);
+        formData.append('BrideFatherreligion',bridefatherreligion);
+        formData.append('BrideLivingStatus','1');
+        formData.append('BrideFatherAge',bridefatherage);
+        formData.append('BrideFatherOccupation',bridefatheroccupation);
 
 if(bridebridefatherchooseaddress==="1")
 {
-  formData.append('BrideFatheraddress.Street',Street3);
-            formData.append('BrideFatheraddress.village',Village3);
-            formData.append('BrideFatheraddress.Taluk',Taluk3);
-            formData.append('BrideFatheraddress.District4',District3);
-            formData.append('BrideFatheraddress.State',State3);
-            formData.append('BrideFatheraddress.Country',Country3);
-            formData.append('BrideFatheraddress.Pincode',Pincode3);
+formData.append('BrideFatheraddress.Street',Street3);
+        formData.append('BrideFatheraddress.village',Village3);
+        formData.append('BrideFatheraddress.Taluk',Taluk3);
+        formData.append('BrideFatheraddress.District4',District3);
+        formData.append('BrideFatheraddress.State',State3);
+        formData.append('BrideFatheraddress.Country',Country3);
+        formData.append('BrideFatheraddress.Pincode',Pincode3);
 }
 else{
-  formData.append('BrideFatheraddress.Street',Street4);
-            formData.append('BrideFatheraddress.village',Village4);
-            formData.append('BrideFatheraddress.Taluk',Taluk4);
-            formData.append('BrideFatheraddress.District4',District4);
-            formData.append('BrideFatheraddress.State',State4);
-            formData.append('BrideFatheraddress.Country',Country4);
-            formData.append('BrideFatheraddress.Pincode',Pincode4);
+formData.append('BrideFatheraddress.Street',Street4);
+        formData.append('BrideFatheraddress.village',Village4);
+        formData.append('BrideFatheraddress.Taluk',Taluk4);
+        formData.append('BrideFatheraddress.District4',District4);
+        formData.append('BrideFatheraddress.State',State4);
+        formData.append('BrideFatheraddress.Country',Country4);
+        formData.append('BrideFatheraddress.Pincode',Pincode4);
 }
-          
-            formData.append('BrideFLivingStatus',bridefatherlivingstatus);
-            formData.append('BrideMotherName',bridemother);
-            formData.append('BrideMotherreligion',bridemotherreligion);
-            formData.append('BrideMLivingStatus',bridemotherlivingstatuss);
-            formData.append('BrideMotherAge',bridemotherage);
-            formData.append('BrideMotherOccupation',bridemotheroccupation);
+      
+        formData.append('BrideFLivingStatus',bridefatherlivingstatus);
+        formData.append('BrideMotherName',bridemother);
+        formData.append('BrideMotherreligion',bridemotherreligion);
+        formData.append('BrideMLivingStatus',bridemotherlivingstatuss);
+        formData.append('BrideMotherAge',bridemotherage);
+        formData.append('BrideMotherOccupation',bridemotheroccupation);
 
 if(bridemotherchooseaddress==="1"&&bridebridefatherchooseaddress==="1")
 {
-  formData.append('BrideMotheraddress.Street',Street3);
-  formData.append('BrideMotheraddress.village',Village3);
-  formData.append('BrideMotheraddress.Taluk',Taluk3);
-  formData.append('BrideMotheraddress.District',District3);
-  formData.append('BrideMotheraddress.State',State3);
-  formData.append('BrideMotheraddress.Country',Country3);
-  formData.append('BrideMotheraddress.Pincode',Pincode3);
+formData.append('BrideMotheraddress.Street',Street3);
+formData.append('BrideMotheraddress.village',Village3);
+formData.append('BrideMotheraddress.Taluk',Taluk3);
+formData.append('BrideMotheraddress.District',District3);
+formData.append('BrideMotheraddress.State',State3);
+formData.append('BrideMotheraddress.Country',Country3);
+formData.append('BrideMotheraddress.Pincode',Pincode3);
 }
 else if(bridemotherchooseaddress==="2")
 {
-  formData.append('BrideMotheraddress.Street',Street4);
-  formData.append('BrideMotheraddress.village',Village4);
-  formData.append('BrideMotheraddress.Taluk',Taluk4);
-  formData.append('BrideMotheraddress.District',District4);
-  formData.append('BrideMotheraddress.State',State4);
-  formData.append('BrideMotheraddress.Country',Country4);
-  formData.append('BrideMotheraddress.Pincode',Pincode4);
+formData.append('BrideMotheraddress.Street',Street4);
+formData.append('BrideMotheraddress.village',Village4);
+formData.append('BrideMotheraddress.Taluk',Taluk4);
+formData.append('BrideMotheraddress.District',District4);
+formData.append('BrideMotheraddress.State',State4);
+formData.append('BrideMotheraddress.Country',Country4);
+formData.append('BrideMotheraddress.Pincode',Pincode4);
 }
 else{
-  formData.append('BrideMotheraddress.Street',Street5);
-            formData.append('BrideMotheraddress.village',Village5);
-            formData.append('BrideMotheraddress.Taluk',Taluk5);
-            formData.append('BrideMotheraddress.District',District5);
-            formData.append('BrideMotheraddress.State',State5);
-            formData.append('BrideMotheraddress.Country',Country5);
-            formData.append('BrideMotheraddress.Pincode',Pincode5);
+formData.append('BrideMotheraddress.Street',Street5);
+        formData.append('BrideMotheraddress.village',Village5);
+        formData.append('BrideMotheraddress.Taluk',Taluk5);
+        formData.append('BrideMotheraddress.District',District5);
+        formData.append('BrideMotheraddress.State',State5);
+        formData.append('BrideMotheraddress.Country',Country5);
+        formData.append('BrideMotheraddress.Pincode',Pincode5);
 }
-          
-            formData.append('placeofmarriage.Name',marriageplacename);
-            formData.append('placeofmarriage. Street', Street6);
-            formData.append('placeofmarriage.village',Village6);
-            formData.append('placeofmarriage.Taluk',Taluk6);
-            formData.append('placeofmarriage.District',District6);
-            formData.append('placeofmarriage.State',State6);
-            formData.append('placeofmarriage.Country',Country6);
-            formData.append('placeofmarriage.Pincode',Pincode6);
-            formData.append('MarriageDate',marriagedate);
-            formData.append('MarriageNotes','test');
-            formData.append('whosolemnizedmarriage',whosolemnimarriage);
-            formData.append('Addressofsolemnized.Street',Street7);
-            formData.append('Addressofsolemnized.village',Village7);
-            formData.append('Addressofsolemnized.Taluk',Taluk7);
-            formData.append('Addressofsolemnized.District',District7);
-            formData.append('Addressofsolemnized.State',State7);
-            formData.append('Addressofsolemnized.Country',Country7);
-            formData.append('Addressofsolemnized.Pincode',Pincode7);
-            formData.append('Bridemother',bridemotherpresent);
-            formData.append('BrideFather',bridefatherpresent);
-            formData.append('BrideFatherGroom',groommother);
-            formData.append('BridemotherGroom',groomfather);
-            formData.append('Witness','1');
-            formData.append('Witnessname',witnessname);
-            formData.append('Witnessrelation',relationship);
-            formData.append('Witnessaddress.Street',Street8);
-            formData.append('Witnessaddress.village',Village8);
-            formData.append('Witnessaddress.Taluk',Taluk8);
-            formData.append('Witnessaddress.District',District8);
-            formData.append('Witnessaddress.State',State8);
-            formData.append('Witnessaddress.Country',Country8);
-            formData.append('Witnessaddress.Pincode',Pincode8);
-            formData.append('Identitynumber',idcardno);            
-            formData.append('Passport',this.state.Passport);
-            formData.append('Marksheet',this.state.Marksheet);
-            formData.append('Rationcard',this.state.Rationcard);
-            formData.append('Aadharcard',this.state.Aadharcard);
-            formData.append('Voterid',this.state.Voterid);
-            formData.append('DrivingLicence',this.state.Drivinglicence);
-            formData.append('PassportSizePhotograph',this.state.Passportsizephoto);
-            formData.append('DivorceCopy',this.state.Divorcecopy);
-            formData.append('FirstMarriageCertificate',this.state.MarriageCertificate);
-            formData.append('SpouseDeathCertificate',this.state.Spousedeathcertificate);
-            formData.append('SingleStatusCertificate',this.state.Singlestatuscertificate);
-            formData.append('BridePassport',this.state.BridePassport);
-            formData.append('BrideMarksheet',this.state.BrideMarksheet);
-            formData.append('BrideRationCard',this.state.BrideRationcard);
-            formData.append('BrideAadharcard',this.state.BrideAadharcard);
-            formData.append('BrideVoterid',this.state.BrideVoterid);
-            formData.append('BrideDrivingLicence',this.state.BrideDrivinglicence);
-            formData.append('BridePassportSizePhotograph',this.state.BridePassportsizephoto);
-            formData.append('BrideDivorceCopy',this.state.BrideDivorcecopy);
-            formData.append('BrideFirstMarriageCertificate',this.state.BrideMarriageCertificate);
-            formData.append('BrideSpouseDeathCertificate',this.state.BrideSpousedeadcertificate);
-            formData.append('BrideSingleStatusCertificate',this.state.BrideSinglestatuscertificate);
-            formData.append('Invitation',this.state.Invitation);
-            formData.append('MarriageReceipt',this.state.Marriagereceipt);
-            formData.append('Moreattach','test');
-            formData.append('Declaration','1');
-            formData.append('Otherservices','1');
-            formData.append('Subservices','1');
+      
+        formData.append('placeofmarriage.Name',marriageplacename);
+        formData.append('placeofmarriage. Street', Street6);
+        formData.append('placeofmarriage.village',Village6);
+        formData.append('placeofmarriage.Taluk',Taluk6);
+        formData.append('placeofmarriage.District',District6);
+        formData.append('placeofmarriage.State',State6);
+        formData.append('placeofmarriage.Country',Country6);
+        formData.append('placeofmarriage.Pincode',Pincode6);
+        formData.append('MarriageDate',marriagedate);
+        formData.append('MarriageNotes','test');
+        formData.append('whosolemnizedmarriage',whosolemnimarriage);
+        formData.append('Addressofsolemnized.Street',Street7);
+        formData.append('Addressofsolemnized.village',Village7);
+        formData.append('Addressofsolemnized.Taluk',Taluk7);
+        formData.append('Addressofsolemnized.District',District7);
+        formData.append('Addressofsolemnized.State',State7);
+        formData.append('Addressofsolemnized.Country',Country7);
+        formData.append('Addressofsolemnized.Pincode',Pincode7);
+        formData.append('Bridemother',bridemotherpresent);
+        formData.append('BrideFather',bridefatherpresent);
+        formData.append('BrideFatherGroom',groommother);
+        formData.append('BridemotherGroom',groomfather);
+        formData.append('Witness','1');
+        formData.append('Witnessname',witnessname);
+        formData.append('Witnessrelation',relationship);
+        formData.append('Witnessaddress.Street',Street8);
+        formData.append('Witnessaddress.village',Village8);
+        formData.append('Witnessaddress.Taluk',Taluk8);
+        formData.append('Witnessaddress.District',District8);
+        formData.append('Witnessaddress.State',State8);
+        formData.append('Witnessaddress.Country',Country8);
+        formData.append('Witnessaddress.Pincode',Pincode8);
+        formData.append('Identitynumber',idcardno);            
+        formData.append('Passport',this.state.Passport);
+        formData.append('Marksheet',this.state.Marksheet);
+        formData.append('Rationcard',this.state.Rationcard);
+        formData.append('Aadharcard',this.state.Aadharcard);
+        formData.append('Voterid',this.state.Voterid);
+        formData.append('DrivingLicence',this.state.Drivinglicence);
+        formData.append('PassportSizePhotograph',this.state.Passportsizephoto);
+        formData.append('DivorceCopy',this.state.Divorcecopy);
+        formData.append('FirstMarriageCertificate',this.state.MarriageCertificate);
+        formData.append('SpouseDeathCertificate',this.state.Spousedeathcertificate);
+        formData.append('SingleStatusCertificate',this.state.Singlestatuscertificate);
+        formData.append('BridePassport',this.state.BridePassport);
+        formData.append('BrideMarksheet',this.state.BrideMarksheet);
+        formData.append('BrideRationCard',this.state.BrideRationcard);
+        formData.append('BrideAadharcard',this.state.BrideAadharcard);
+        formData.append('BrideVoterid',this.state.BrideVoterid);
+        formData.append('BrideDrivingLicence',this.state.BrideDrivinglicence);
+        formData.append('BridePassportSizePhotograph',this.state.BridePassportsizephoto);
+        formData.append('BrideDivorceCopy',this.state.BrideDivorcecopy);
+        formData.append('BrideFirstMarriageCertificate',this.state.BrideMarriageCertificate);
+        formData.append('BrideSpouseDeathCertificate',this.state.BrideSpousedeadcertificate);
+        formData.append('BrideSingleStatusCertificate',this.state.BrideSinglestatuscertificate);
+        formData.append('Invitation',this.state.Invitation);
+        formData.append('MarriageReceipt',this.state.Marriagereceipt);
+        formData.append('Moreattach','test');
+        formData.append('Declaration','1');
+        formData.append('Otherservices','1');
+        formData.append('Subservices','1');
+       
+        console.log(formData);
+fetch(url,{
+          method:'POST',
+          headers:
+          {
+            'x-access-token':access_token },
+          body:formData
+        }).then((result)=>
+        {
+          result.json().then((resp)=>
+        {
+          console.warn("resp",resp)
+          if (result.status===200) {
            
-            console.log(formData);
-  fetch(url,{
-              method:'POST',
-              headers:
-              {
-                'x-access-token':access_token },
-              body:formData
-            }).then((result)=>
-            {
-              result.json().then((resp)=>
-            {
-              console.warn("resp",resp)
-              if (result.status===200) {
-               
-              }
-              else if(result.status===401)
-              {
-                this.props.history.push('/Login')
-                return result;
-              }
-              else if(result.status===400)
-              {
-                document.getElementById('errormsg1').style.display = 'block';
-               return result;
-              }
-              else if(result.status===500)
-              {
-                document.getElementById('errormsg1').style.display = 'block';
-               return result;
-              }
-              else if(result.status===503)
-              {
-                document.getElementById('errormsg1').style.display = 'block';
-               return result;
-              }
-              else{
-               
-                }
-          })
-          })       
+          }
+          else if(result.status===401)
+          {
+            this.props.history.push('/Login')
+            return result;
+          }
+          else if(result.status===400)
+          {
+            document.getElementById('errormsg1').style.display = 'block';
+           return result;
+          }
+          else if(result.status===500)
+          {
+            document.getElementById('errormsg1').style.display = 'block';
+           return result;
+          }
+          else if(result.status===503)
+          {
+            document.getElementById('errormsg1').style.display = 'block';
+           return result;
+          }
+          else{
+          
+            }
+      })
+      })  
+      }     
       };
 
 
