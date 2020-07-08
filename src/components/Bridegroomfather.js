@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Redirect,Link} from "react-router-dom";
 export  class Bridegroomfather extends Component
 {
   constructor(props) {
@@ -212,23 +212,36 @@ return isValid;
     const  showHideDemo1=false;
       this.setState({showHideDemo1: showHideDemo1});
     }
-
+    closeform=e=>
+    {
+      window.localStorage.clear();
+      this.setState({referrer: '/sign-in'});
+    }
 
     render()
     {
+      const {referrer} = this.state;
+      if (referrer) return <Redirect to={referrer} />;
+
+    var fname=localStorage.getItem('firstname');
+    var lname=localStorage.getItem('lastname');
       const { showHideDemo1} = this.state;
         const {value,inputChange}=this.props;
         const {value:{Fathername,Fatherreligion,groomfatherlivingstatus,FatherAge,FatherOccupation,fatherschooseaddress,
         Street1,Village1,Taluk1,District1,State1,Country1,Pincode1}}=this.props;
         return(
           <div >
-          <div class="header_design w-100">
-              <div class="text-black"><div class="border-image m-4"></div> 
-              <div className="text-right">Avartar</div></div>
-             
-          </div>
+         <div class="header_design w-100">
+        <div class="row float-right m-3" style={{marginRight:"20px"}}> <b style={{marginTop: "7px"}}><label >Welcome {fname }</label></b> &nbsp; &nbsp;<button style={{marginTop: "-7px"}} className="btn btn-primary" onClick={() => this.closeform()} style={{marginToptop: "-7px"}}>logout</button></div>
+          <div class="text-black"> 
+              <div class="text-black">
+                <div class="border-image p-4"></div>  </div>
+                
+                </div>    </div>
+         
        <div class="body_UX">  
-           <div class="body_color_code m-4"><div className="img_logo"></div>
+      <div class="body_color_code m-4">
+             <div className="img_logo"></div>
            <br></br>
 <br></br><br></br>
 

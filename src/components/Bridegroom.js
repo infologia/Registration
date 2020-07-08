@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';        
-
+import React, { Component } from 'react'; 
+import {Redirect,Link} from "react-router-dom";
 
 export  class Bridegroom extends Component
 {
@@ -338,35 +337,37 @@ return isValid;
         }       
       }
   
+      closeform=e=>
+      {
+        window.localStorage.clear();
+        this.setState({referrer: '/sign-in'});
+      }
     render()
     {
+      const {referrer} = this.state;
+      if (referrer) return <Redirect to={referrer} />;
+
+    var fname=localStorage.getItem('firstname');
+    var lname=localStorage.getItem('lastname');
        const {value,inputChange}=this.props;
         const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
           maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,Taluk}}=this.props;
         return(
           <div >
-          <div class="header_design w-100">
+        <div class="header_design w-100">
+        <div class="row float-right m-3" style={{marginRight:"20px"}}> <b style={{marginTop: "7px"}}><label >Welcome {fname }</label></b> &nbsp; &nbsp;<button style={{marginTop: "-7px"}} className="btn btn-primary" onClick={() => this.closeform()} style={{marginToptop: "-7px"}}>logout</button></div>
+          <div class="text-black"> 
               <div class="text-black">
-                <div class="border-image m-4"></div> 
-              <div className="text-right">Avartar</div></div>
-             
-          </div>
+                <div class="border-image p-4"></div>  </div>
+                
+                </div>    </div>
          
        <div class="body_UX">  
-           <div class="body_color_code m-4">
-             <div className="img_botlogo" ></div>
+      <div class="body_color_code m-4">
+             <div className="img_logo"></div>
            <br></br>
 <br></br><br></br>
- <div class="row"> <div class="col-md-2"></div>
-</div><div class="step_wizrd">
-                      <div class="step">
-                     </div>
-                       <div class="step11">
-                       <div class="step2"></div>
-                      <div class="step3"></div>
-                      <div class="step4"></div>
-                      <div class="step4"></div>
-                      </div></div>
+
 
                       <div class="box m-4">
            <div className="form-container ">

@@ -72,7 +72,11 @@ handleChange(e) {
       {
         console.warn("resp",resp);
         if (result.status===200) {
+          localStorage.setItem('firstname', resp.firstname);
+          localStorage.setItem('lastname', resp.lastname);
           localStorage.setItem('token', resp.token);
+          let fname=localStorage.getItem('firstname');
+          let lname=localStorage.getItem('lastname');
           let tokenkey=localStorage.getItem('token');
           console.log('Login Successfully');
         

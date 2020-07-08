@@ -134,14 +134,14 @@ top: 103px;
 }
 
 .img_logo{
-  background:  url('img/logo/logo.png') 53% 83% no-repeat padding-box;
-width: 20%;
-    height: 4%;
-    background-color: white;
-    margin-top: -21px;
-    padding-top: 31px;
-    margin-left: 972px;
+  background:  url('img/logo/logo.png') 50% 80% no-repeat padding-box;
+  width: 250px;
+  height: 35px;
+  background-color: white;
+  margin-top: -36px;
+  margin-left: 58px;
 }
+
 
 .img_botlogo{
   background:  url('img/logo/logo.png') 50% 80% no-repeat padding-box;
@@ -154,59 +154,12 @@ width: 20%;
 
 
 .border-image{
-  top: 725px;
-left: 982px;
-width: 227px;
-height: 40px;
-background: transparent url('img/logo.png') 0% 0% no-repeat padding-box;
-border-radius: 10px;
+  width: 70px;
+  height: 64px;
+  background: transparent url('img/logo/rsz_logos.png') 100% 50% no-repeat padding-box;
+
 }
 
-
-
-.step2_word{
-  top: 122px;
-left: 505px;
-width: 28px;
-height: 14px;
-text-align: left;
-font: Semibold 10px/14px Segoe UI;
-letter-spacing: 0px;
-color: #707070;
-}
-
-.step3_word{
-  top: 122px;
-  left: 643px;
-  width: 28px;
-  height: 14px;
-  text-align: left;
-  font: Semibold 10px/14px Segoe UI;
-  letter-spacing: 0px;
-  color: #707070;
-}
-
-
-.step4_word{
-  top: 122px;
-left: 769px;
-width: 29px;
-height: 14px;
-text-align: left;
-font: Semibold 10px/14px Segoe UI;
-letter-spacing: 0px;
-color: #707070;
-}
-.step5_word{
-  top: 122px;
-  left: 896px;
-  width: 28px;
-  height: 14px;
-  text-align: left;
-  font: Semibold 10px/14px Segoe UI;
-  letter-spacing: 0px;
-  color: rgba(112, 112, 112, 1);
-}
 
 .box{
   background: rgba(247, 247, 247, 1) 0% 0% no-repeat padding-box;
