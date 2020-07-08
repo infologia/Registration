@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export  class Bridegroom extends Component
 {
   constructor(props) {
@@ -53,9 +54,8 @@ Passportnoerror:"",
   continue=e=>{
     e.preventDefault();
   const isValid=this.validateForm();
-  if(isValid)
-  {
-    this.props.nextStep(); 
+  if(isValid){
+    this.props.nextStep();
   }
   };
 
@@ -339,7 +339,32 @@ return isValid;
           maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,Taluk}}=this.props;
       
         return(
-            <div className="form-container">
+          <div >
+          <div class="header_design w-100">
+              <div class="text-black">
+                <div class="border-image m-4"></div> 
+              <div className="text-right">Avartar</div></div>
+             
+          </div>
+         
+       <div class="body_UX">  
+           <div class="body_color_code m-4">
+             <div className="img_botlogo" ></div>
+           <br></br>
+<br></br><br></br>
+ <div class="row"> <div class="col-md-2"></div>
+</div><div class="step_wizrd">
+                      <div class="step">
+                     </div>
+                       <div class="step11">
+                       <div class="step2"></div>
+                      <div class="step3"></div>
+                      <div class="step4"></div>
+                      <div class="step4"></div>
+                      </div></div>
+
+                      <div class="box m-4">
+           <div className="form-container ">
               <br></br>
             <h1 style={{fontSize:"24px"}}>Details of Bridegroom</h1>
 <br></br>
@@ -348,28 +373,28 @@ return isValid;
               <div class="col-md-3">
               <div class="form-group">
 <label >Date of Marriage<span style={{color:"red"}}> *</span> </label>
-<input type="date" className="form-control" value={value.Dateofmarriage}  onChange={inputChange('Dateofmarriage')}  name="Dateofmarriage"></input>
+<input type="date" className="input" value={value.Dateofmarriage}  onChange={inputChange('Dateofmarriage')}  name="Dateofmarriage"></input>
         <p style={{color:"red"}}>{this.state.Dateofmarriageerror}</p>
 </div>    
            </div>
               <div class="col-md-3">
               <div class="form-group">
 <label>Name of the Groom<span style={{color:"red"}}> *</span> </label>
-<input type="text" name="Name"  value={value.Name} onChange={inputChange('Name')} className="form-control" />
+<input type="text" name="Name"  value={value.Name} onChange={inputChange('Name')} className="input" />
 <p style={{color:"red"}}>{this.state.Nameerror}</p>
 </div>
               </div>
               <div class="col-md-3">
               <div class="form-group">
 <label>Nationality<span style={{color:"red"}}> *</span> </label>
-<input type="text" name="Nationality"  value={value.Nationality} onChange={inputChange('Nationality')} className="form-control"  />
+<input type="text" name="Nationality"  value={value.Nationality} onChange={inputChange('Nationality')} className="input"  />
         <p style={{color:"red"}}>{this.state.Nationalityerror}</p>
  </div>
               </div>
               <div class="col-md-3">
               <div class="form-group">
  <label>Residential Status in India<span style={{color:"red"}}> *</span> </label>
- <select  className="form-control" name="ResidentialStatus" value={value.ResidentialStatus} onChange={inputChange('ResidentialStatus')} >
+ <select  className="input" name="ResidentialStatus" value={value.ResidentialStatus} onChange={inputChange('ResidentialStatus')} >
 <option value="0">Select residential status</option>
   <option value="1">Resident</option>
   <option value="2">NRI</option>
@@ -385,7 +410,7 @@ return isValid;
               <div class="col-md-3">
               <div class="form-group">
   <label>Relegion<span style={{color:"red"}}> *</span> </label>
-  <select  className="form-control" name="Religion" value={value.Religion} onChange={inputChange('Religion')} >
+  <select  className="input" name="Religion" value={value.Religion} onChange={inputChange('Religion')} >
 <option value="0">Select religion</option>
   <option value="1">Hindu</option>
   <option value="2">Muslim</option>
@@ -400,42 +425,40 @@ return isValid;
               <div class="col-md-3">
               <div class="form-group">
   <label>Caste<span style={{color:"red"}}> *</span> </label>
-  <input type="text" name="Caste" value={value.Caste} onChange={inputChange('Caste')}  className="form-control"/>
+  <input type="text" name="Caste" value={value.Caste} onChange={inputChange('Caste')}  className="input"/>
   <p style={{color:"red"}}>{this.state.Casteerror}</p>
          </div>
               </div>
-              <div class="col-md-2">
-              <div class="form-group">
+              <div className="col-md-3">
               <label>Date of Birth<span style={{color:"red"}}> *</span> </label>
-         <input type="date" className="form-control"  name="DOB"  value={value.DOB} onChange={inputChange('DOB')} ></input>
-         <p style={{color:"red"}}>{this.state.DOBerror}</p>
-</div>
-              </div>
-              <div class="col-md-1">
-              <label>Age</label>
-              <p>
-{this.state.calage}</p>
+              <input type="date" className="input" value={value.DOB}  onChange={inputChange('DOB')}  name="DOB"></input>
+        <p style={{color:"red"}}>{this.state.DOBerror}</p>
+
               </div>
               <div class="col-md-3">
-              <div class="form-group">
-<label>Name of the Employer<span style={{color:"red"}}> *</span> </label>
-<input type="text" name="Employername" value={value.Employername} onClick={this.datecal} onChange={inputChange('Employername')}   className="form-control" />
-<p style={{color:"red"}}>{this.state.Employernameerror}</p>
-         </div>
+                <label>Age</label>
+        <p>{this.state.calage}</p>
               </div>
             </div>
-<div class="row">          
+<div class="row">   
+<div class="col-md-3">
+              <div class="form-group">
+<label>Name of the Employer<span style={{color:"red"}}> *</span> </label>
+<input type="text" name="Employername" value={value.Employername} onClick={this.datecal} onChange={inputChange('Employername')}   className="input" />
+<p style={{color:"red"}}>{this.state.Employernameerror}</p>
+         </div>
+              </div>       
 <div class="col-md-3">
   <div class="form-group">
 <label>Designation<span style={{color:"red"}}> *</span> </label>
-<input type="text"  name="Designation" value={value.Designation} onChange={inputChange('Designation')}    className="form-control" />
+<input type="text"  name="Designation" value={value.Designation} onChange={inputChange('Designation')}    className="input" />
 <p style={{color:"red"}}>{this.state.Designationerror}</p>
          </div>
   </div>
   <div class="col-md-3">
   <div class="form-group">
   <label>Marital Status Before Marriage<span style={{color:"red"}}> *</span> </label>
-      <select  className="form-control" name="maritalstatus" value={value.maritalstatus} onChange={inputChange('maritalstatus')}>
+      <select  className="input" name="maritalstatus" value={value.maritalstatus} onChange={inputChange('maritalstatus')}>
     <option value="0">Select marital status</option>
       <option value="1">BACHELOR</option>
       <option value="2">DIVORCE</option>
@@ -448,79 +471,85 @@ return isValid;
   <div class="col-md-3">
   <div className="form-group">
 <label>Mobile Number<span style={{color:"red"}}> *</span> </label>
-<input type="text"  name="whatsappnumber" value={value.Mobileno} onChange={inputChange('Mobileno')}  className="form-control" />
+<input type="text"  name="whatsappnumber" value={value.Mobileno} onChange={inputChange('Mobileno')}  className="input" />
 <p style={{color:"red"}}>{this.state.Mobilenoerror}</p>
          </div>
   </div>
   <div class="col-md-3">
   <div className="form-group">
 <label>Whatsapp Number<span style={{color:"red"}}> *</span> </label>
-<input type="text"  name="whatsappnumber" value={value.whatsappnumber} onChange={inputChange('whatsappnumber')}  className="form-control" />
+<input type="text"  name="whatsappnumber" value={value.whatsappnumber} onChange={inputChange('whatsappnumber')}  className="input" />
 <p style={{color:"red"}}>{this.state.whatsappnumbererror}</p>
          </div>
   </div>
 <div class="col-md-3">
   <label>Email Address<span style={{color:"red"}}> *</span> </label>
-<input type="text"  name="emailaddress" value={value.emailaddress} onChange={inputChange('emailaddress')}  className="form-control" />
+<input type="text"  name="emailaddress" value={value.emailaddress} onChange={inputChange('emailaddress')}  className="input" />
 <p style={{color:"red"}}>{this.state.emailaddresserror}</p>   
   </div>   
 </div>
 
 <div class="row"><div class="col-md-12"> <label >RESIDENTIAL ADDRESS</label></div></div>
+<br></br>
 <div class="row">
 <br></br>
   <div class="col-md-3"> 
   <label>Street<span style={{color:"red"}}> *</span> </label>
-  <input type="text" className="form-control" name="Street" value={value.Street} onChange={inputChange('Street')}  />
+  <input type="text" className="input" name="Street" value={value.Street} onChange={inputChange('Street')}  />
   <p style={{color:"red"}}>{this.state.Streeterror}</p> 
   </div>
   <div class="col-md-3">
   <label>Village<span style={{color:"red"}}> *</span> </label>
-  <input type="text" className="form-control" name="Village" value={value.Village} onChange={inputChange('Village')}   />
+  <input type="text" className="input" name="Village" value={value.Village} onChange={inputChange('Village')}   />
   <p style={{color:"red"}}>{this.state.Villageerror}</p> 
   </div>
   <div class="col-md-3">
   <label>Taluk<span style={{color:"red"}}> *</span> </label>
-  <input type="text" className="form-control" name="Taluk" value={value.Taluk} onChange={inputChange('Taluk')}  />
+  <input type="text" className="input" name="Taluk" value={value.Taluk} onChange={inputChange('Taluk')}  />
   <p style={{color:"red"}}>{this.state.Talukerror}</p> 
  </div>
  <div class="col-md-3">
  <label>District<span style={{color:"red"}}> *</span> </label>
- <input type="text" className="form-control" name="District" value={value.District} onChange={inputChange('District')}   />
+ <input type="text" className="input" name="District" value={value.District} onChange={inputChange('District')}   />
  <p style={{color:"red"}}>{this.state.Districterror}</p> 
  </div>
 </div>
 <div class="row">
   <div class="col-md-3">
   <label>State<span style={{color:"red"}}> *</span> </label>
-  <input type="text" className="form-control" name="State" value={value.State} onChange={inputChange('State')}  />
+  <input type="text" className="input" name="State" value={value.State} onChange={inputChange('State')}  />
   <p style={{color:"red"}}>{this.state.Stateerror}</p> 
  </div>
   <div class="col-md-3">
   <label>Country<span style={{color:"red"}}> *</span> </label>
-  <input type="text" className="form-control" name="Country" value={value.Country} onChange={inputChange('Country')}   />
+  <input type="text" className="input" name="Country" value={value.Country} onChange={inputChange('Country')}   />
   <p style={{color:"red"}}>{this.state.Countryerror}</p> 
   </div>
   <div class="col-md-3">
   <label>Pincode<span style={{color:"red"}}> *</span> </label>
-  <input type="number" className="form-control" name="Pincode" value={value.Pincode} onChange={inputChange('Pincode')}   />
+  <input type="number" className="input" name="Pincode" value={value.Pincode} onChange={inputChange('Pincode')}   />
   <p style={{color:"red"}}>{this.state.Pincodeerror}</p> 
   </div>
   <div class="col-md-3">
     <div class="form-group">
   <label>Passport Number<span style={{color:"red"}}> *</span> </label>
-  <input type="text"  className="form-control" name="Passportno" value={value.Passportno} onChange={inputChange('Passportno')} />
+  <input type="text"  className="input" name="Passportno" value={value.Passportno} onChange={inputChange('Passportno')} />
   <p style={{color:"red"}}>{this.state.Passportnoerror}</p>
          </div>
          </div>
-</div>                
-            <br></br>
-        <div className="text-right">
-            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+</div>   </div>      
+        </div> 
+       <div className="text-right">
+            <button className="next m-4" onClick={this.continue}>Next</button>
         </div>
         <br></br>
-        </div>          
-        )
+        <div className="img_logo" style={{marginBottom:"37px"}}></div>
+       
+         </div>
+          </div>  
+            </div>   
+       
+       )
     }
 }
 export default Bridegroom

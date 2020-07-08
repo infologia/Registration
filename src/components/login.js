@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Redirect,Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 export default class Login extends Component {
 
   constructor(props)
@@ -72,6 +72,7 @@ handleChange(e) {
       {
         console.warn("resp",resp);
         if (result.status===200) {
+          alert();
           localStorage.setItem('token', resp.token);
           let tokenkey=localStorage.getItem('token');
           console.log('Login Successfully');
@@ -88,41 +89,65 @@ handleChange(e) {
     })
     }
 
+
     render()
     { 
         return(
-          <div className="container">
-          <div className="auth-wrapper">
-          <div className="form-container">
-          <div className="auth-inner">
-            <div id="main-registration-container">
-            <div id="register">
-           
-               <h3>Login</h3>
-               <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
-              <div className="form-group">
-               <label>Email ID</label>
-               <input type="text" required name="emailid" placeholder="Enter email" className="form-control" value={this.state.fields.emailid} onChange={this.handleChange}  />
-               <div className="errorMsg" style={{color: "red"}}>{this.state.errors.emailid}</div></div>
-                <div className="form-group">
-               <label>Password</label>
-               <input type="Password" required name="Password" placeholder="Enter password" className="form-control" value={this.state.fields.Password} onChange={this.handleChange}   />
-               <div className="errorMsg" style={{color: "red"}}>{this.state.errors.Password}</div></div>
-               <input type="submit" className="btn btn-primary btn-block"  disabled = {this.state.isDisabled}   value="Submit" onSubmit={this.submitForm}/>
-<br></br>
+        <div className="container-fluid">
+  <div className="row no-gutter">
+    <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image">
+    </div>
+    <div className="col-md-8 col-lg-6">
+      <div className="login d-flex align-items-center py-5">
+        <div className="container">
+          
+          <div className="row">
+            <div className="col-md-9 col-lg-8 mx-auto">
+              <div><img src="logo.png" style={{width:"360px"}} ></img></div>
+            <br></br>
+              <h3 className="login-heading mb-4">Welcome!</h3>
+              <form method="post"  name="userRegistrationForm" onSubmit= {this.submituserRegistrationForm}>
+                <div className="form-label-group">
+                  <input type="email" id="emailid" className="form-control" name="emailid" placeholder="Email address" required autofocus value={this.state.fields.emailid} onChange={this.handleChange} />
+                  <label htmlFor="emailid">Email address</label>
+                  <div className="errorMsg" style={{color: "red"}}>{this.state.errors.emailid}</div>
+                </div>
+                <br></br>
+                <div className="form-label-group">
+                  <input type="password" id="Password" className="form-control" name="Password" placeholder="Password" required value={this.state.fields.Password} onChange={this.handleChange}/>
+                  <label htmlFor="Password">Password</label>
+                  <div className="errorMsg" style={{color: "red"}}>{this.state.errors.Password}</div>
+                </div>
+                <br></br>
+               <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase  mb-2" type="submit" value="Submit" onSubmit={this.submitForm}>Sign in</button>
+               <br></br>
                <div id="errormsg1"  style={{display:"none"}}>
                 <div class="alert" >
   <span class="closebtn" onClick={this.closeform}>&times;</span> 
   Invalid email/password
 </div></div>
-<Link className="nav-link" to={"/sign-up"} style={{marginLeft:"305px"}}>Registration</Link>
-            </form>
-           </div>
-       </div>
-       </div>
-       </div>
-       </div>
-       </div>
+<br></br>
+               <div className="row">
+                 <div className="col-md-6">
+                 <div className="text-left">
+               <Link className="small" to={"/Sign-Up"}>Register Now</Link>
+               </div>
+                 </div>
+                 <div className="col-md-6">
+                 <div className="text-right">
+               <a className="small"  href="#">Forgot password?</a>
+              </div>
+                 </div>
+               </div>
+               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         )
     }
 }

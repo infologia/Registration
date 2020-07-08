@@ -22,8 +22,9 @@ export class  Marriagedetails extends Component
         e.preventDefault();
       const isValid=this.validateForm();
       if(isValid){
-       this.props.nextStep(); 
-}
+        this.props.nextStep();
+      }
+
     }
 
     back = e => {
@@ -146,14 +147,26 @@ render()
         marriagedate,whosolemnimarriage,Street7,Village7,Taluk7,District7,State7,Country7,Pincode7
     }}=this.props;
     return(
-        <div className="form-container">
-        <br></br>
+        <div >
+        <div class="header_design w-100">
+            <div class="text-black"><div class="border-image m-4"></div> 
+            <div className="text-right">Avartar</div></div>
+           
+        </div>
+     <div class="body_UX">  
+         <div class="body_color_code m-4"><div className="img_logo"></div>
+         <br></br>
+<br></br><br></br>
+
+                    <div class="box m-4">
+         <div className="form-container ">
+            <br></br>
       <h1>Marriage Details</h1>
         <div class="row">
         <div class="col-md-6">
         <div class="form-group">
         <label>Place of Marriage<span style={{color:"red"}}> *</span></label>
-        <select id="beforemarr" className="form-control" value={value.placeofmarriage} onChange={inputChange('placeofmarriage')} >
+        <select id="beforemarr" className="input" value={value.placeofmarriage} onChange={inputChange('placeofmarriage')} >
 <option value="0">-select value-</option>
 <option value="1">Marriage Hall</option>
 <option value="2">Temple</option>
@@ -167,68 +180,68 @@ render()
       <div class="col-md-3">
         <div class="form-group">
 <label>Name<span style={{color:"red"}}> *</span></label>
-<input type="text" name="marriageplacename"  value={value.marriageplacename} onChange={inputChange('marriageplacename')} className="form-control" />
+<input type="text" name="marriageplacename"  value={value.marriageplacename} onChange={inputChange('marriageplacename')} className="input" />
 <p style={{color:"red"}}>{this.state.marriageplacenameerror}</p>
 </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>Street<span style={{color:"red"}}> *</span></label>
-<input type="text" name="Street6"  value={value.Street6} onChange={inputChange('Street6')} className="form-control"  />
+<input type="text" name="Street6"  value={value.Street6} onChange={inputChange('Street6')} className="input"  />
 <p style={{color:"red"}}>{this.state.Street6error}</p>
 </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>Village<span style={{color:"red"}}> *</span></label>
-<input type="text" name="Village6"  value={value.Village6} onChange={inputChange('Village6')} className="form-control"  />
+<input type="text" name="Village6"  value={value.Village6} onChange={inputChange('Village6')} className="input"  />
 <p style={{color:"red"}}>{this.state.Village6error}</p>
 </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>Taluk<span style={{color:"red"}}> *</span></label>
-<input type="text" name="Taluk6"  value={value.Taluk6} onChange={inputChange('Taluk6')} className="form-control"  />
+<input type="text" name="Taluk6"  value={value.Taluk6} onChange={inputChange('Taluk6')} className="input"  />
 <p style={{color:"red"}}>{this.state.Taluk6error}</p>
 </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>District<span style={{color:"red"}}> *</span></label>
-<input type="text" name="District6" value={value.District6} onChange={inputChange('District6')} className="form-control"/>
+<input type="text" name="District6" value={value.District6} onChange={inputChange('District6')} className="input"/>
 <p style={{color:"red"}}>{this.state.District6error}</p>
    </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
         <label>State<span style={{color:"red"}}> *</span></label>
-   <input type="text" className="form-control"  name="State6" value={value.State6} onChange={inputChange('State6')}></input>
+   <input type="text" className="input"  name="State6" value={value.State6} onChange={inputChange('State6')}></input>
    <p style={{color:"red"}}>{this.state.State6error}</p>
 </div>
         </div>
         <div class="col-md-3">
         <label>Country<span style={{color:"red"}}> *</span></label>
-        <input type="text" className="form-control"  name="Country6" value={value.Country6} onChange={inputChange('Country6')}></input>
+        <input type="text" className="input"  name="Country6" value={value.Country6} onChange={inputChange('Country6')}></input>
         <p style={{color:"red"}}>{this.state.Country6error}</p>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>Pincode<span style={{color:"red"}}> *</span></label>
-<input type="number" name="Pincode6" value={value.Pincode6} onChange={inputChange('Pincode6')}  className="form-control" />
+<input type="number" name="Pincode6" value={value.Pincode6} onChange={inputChange('Pincode6')}  className="input" />
 <p style={{color:"red"}}>{this.state.Pincode6error}</p>
    </div>
         </div>     
       <div class="col-md-6">
       <div class="form-group">
 <label >Convenient Date of Marriage Registration<span style={{color:"red"}}> *</span></label>
-<input type="date" className="form-control" value={value.marriagedate} name="marriagedate" onChange={inputChange('marriagedate')} ></input>
+<input type="date" className="input" value={value.marriagedate} name="marriagedate" onChange={inputChange('marriagedate')} ></input>
 <p style={{color:"red"}}>{this.state.marriagedateerror}</p>
 </div>      
 </div>   
 <div class="col-md-6">
       <div class="form-group">
 <label >Who Solemnized the Marriage<span style={{color:"red"}}> *</span></label>
-<select  className="form-control" name="whosolemnimarriage" value={value.whosolemnimarriage}  onChange={inputChange('whosolemnimarriage')} >
+<select  className="input" name="whosolemnimarriage" value={value.whosolemnimarriage}  onChange={inputChange('whosolemnimarriage')} >
 <option value="0">Select person</option>
   <option value="1" >Bride's Mother</option>
   <option value="2" >Bride's Father</option>
@@ -242,56 +255,62 @@ render()
         <div class="col-md-3">
         <div class="form-group">
 <label>Street</label>
-<input type="text" name="Street7" id="s_name" value={value.Street7} onChange={inputChange('Street7')} className="form-control"  />
+<input type="text" name="Street7" id="s_name" value={value.Street7} onChange={inputChange('Street7')} className="input"  />
 </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>Village</label>
-<input type="text" name="Village7" id="v_name" value={value.Village7} onChange={inputChange('Village7')} className="form-control"  />
+<input type="text" name="Village7" id="v_name" value={value.Village7} onChange={inputChange('Village7')} className="input"  />
 </div>
         </div>
        <div class="col-md-3">
         <div class="form-group">
 <label>Taluk</label>
-<input type="text" name="Taluk7" id="t_name" value={value.Taluk7} onChange={inputChange('Taluk7')} className="form-control"  />
+<input type="text" name="Taluk7" id="t_name" value={value.Taluk7} onChange={inputChange('Taluk7')} className="input"  />
 </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>District</label>
-<input type="text" name="District7" id="d_name" value={value.District7} onChange={inputChange('District7')} className="form-control"/>
+<input type="text" name="District7" id="d_name" value={value.District7} onChange={inputChange('District7')} className="input"/>
    </div>
         </div>
         <div class="col-md-3">
         <div class="form-group">
         <label>State</label>
-   <input type="text" className="form-control"  id="st_name" name="State7" value={value.State7} onChange={inputChange('State7')}></input>
+   <input type="text" className="input"  id="st_name" name="State7" value={value.State7} onChange={inputChange('State7')}></input>
 </div>
         </div>
         <div class="col-md-3">
         <label>Country</label>
-        <input type="text" className="form-control" id="c_name"  name="Country7" value={value.Country7} onChange={inputChange('Country7')}></input>
+        <input type="text" className="input" id="c_name"  name="Country7" value={value.Country7} onChange={inputChange('Country7')}></input>
         </div>
         <div class="col-md-3">
         <div class="form-group">
 <label>Pincode</label>
-<input type="number" name="Pincode7" id="p_name" value={value.Pincode7} onChange={inputChange('Pincode7')}  className="form-control" />
+<input type="number" name="Pincode7" id="p_name" value={value.Pincode7} onChange={inputChange('Pincode7')}  className="input" />
    </div>
         </div>
         </div>   
      <br></br>
-        <div className="row">
+        <br></br>
+</div>
+</div>
+
+<div className="row">
                   <div className="col-md-6">
-                  <button className="btn btn-danger" onClick={this.back}>Back</button>
+                  <button className="pev m-4" onClick={this.back}>Previous</button>
                   </div>
                   <div className="col-md-6">
                   <div className="text-right">
-              <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+              <button className="next m-4" onClick={this.continue}>Next</button>
           </div>
                   </div>
-              </div>
-              <br></br>
+              </div><br></br><br></br>  <br></br><br></br> <br></br>
+             
+</div>
+</div>
 </div>
     );
 }    

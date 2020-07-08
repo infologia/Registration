@@ -4,16 +4,16 @@
   box-sizing: border-box;
 }
 body {
-  min-height: 130vh;
+  min-height: 100vh;
   display: flex;
 
   font-family: 'Fira Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6,label,span {
-  font-weight: 500;
+
   font-family: 'Fira Sans', sans-serif;
-  text-align: center;
+
 }
 
 body, html, .App, #root {
@@ -84,4 +84,171 @@ label
 .forgot-password a {
   color: #167bff;
 }
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
 
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.header_design{
+  background: rgba(255, 90, 96, 0.45) 0% 0% no-repeat padding-box;
+box-shadow: 0px 96px 92px rgba(0, 0, 0, 0.16);
+border: 1px solid rgba(112, 112, 112, 1);
+opacity: 1;
+height: 68px;
+}
+
+.body_UX{
+  background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+border: 1px solid rgba(112, 112, 112, 1);
+border-radius: 20px;
+min-height: 150vh;
+display: flex;
+position: relative;
+z-index: 1;
+}
+
+.body_color_code{
+  background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+border: 4px solid rgba(255, 90, 96, 1);
+border-radius: 30px;
+top: 103px;
+    left: 33px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.img_logo{
+  background:  url('img/logo/logo.png') 53% 83% no-repeat padding-box;
+width: 20%;
+    height: 4%;
+    background-color: white;
+    margin-top: -21px;
+    padding-top: 31px;
+    margin-left: 972px;
+}
+
+.img_botlogo{
+  background:  url('img/logo/logo.png') 50% 80% no-repeat padding-box;
+width: 20%;
+    height: 4%;
+    background-color: white;
+    margin-top: -45px;
+    margin-left: 58px;
+}
+
+
+.border-image{
+  top: 725px;
+left: 982px;
+width: 227px;
+height: 40px;
+background: transparent url('img/logo.png') 0% 0% no-repeat padding-box;
+border-radius: 10px;
+}
+
+
+
+.step2_word{
+  top: 122px;
+left: 505px;
+width: 28px;
+height: 14px;
+text-align: left;
+font: Semibold 10px/14px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+}
+
+.step3_word{
+  top: 122px;
+  left: 643px;
+  width: 28px;
+  height: 14px;
+  text-align: left;
+  font: Semibold 10px/14px Segoe UI;
+  letter-spacing: 0px;
+  color: #707070;
+}
+
+
+.step4_word{
+  top: 122px;
+left: 769px;
+width: 29px;
+height: 14px;
+text-align: left;
+font: Semibold 10px/14px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+}
+.step5_word{
+  top: 122px;
+  left: 896px;
+  width: 28px;
+  height: 14px;
+  text-align: left;
+  font: Semibold 10px/14px Segoe UI;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+}
+
+.box{
+  background: rgba(247, 247, 247, 1) 0% 0% no-repeat padding-box;
+border: 1px solid rgba(112, 112, 112, 1);
+border-radius: 10px;
+
+padding-bottom: 40px;
+
+}
+.input
+{
+
+  margin-left: 2px;
+  background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+  border: 1px solid rgba(112, 112, 112, 1);
+  border-radius: 10px;
+  padding: 9px;
+  margin-top: 30px;
+  width: 241px; 
+}
+.pev
+{
+  background: rgba(255, 90, 96, 1) 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+border: 1px solid rgba(255, 90, 96, 1);
+border-radius: 10px;
+margin-top: 30px;
+margin-left: 103px;
+margin-right: 164px;
+width: 164px;
+height: 40px;
+color: white;
+}
+.next
+{
+  background: rgba(92, 184, 92, 1) 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+border: 1px solid rgba(92, 184, 92, 1);
+border-radius: 10px;
+margin-top: 30px;
+ margin-left: 150px;
+width: 164px;
+height: 40px;
+color: white;
+}

@@ -59,9 +59,8 @@ else
     continue=e=>{
         e.preventDefault();
       const isValid=this.validateForm();
-      if(isValid)
-      {
-        this.props.nextStep(); 
+      if(isValid){
+        this.props.nextStep();
       }
       };
 
@@ -87,11 +86,11 @@ else
     }
   }
   
-  if(bridefatherage===""||bridefatherage===undefined)
-  {
-    bridefatherageerror="Please enter father age";
-    isValid=false;
-  }
+  // if(bridefatherage===""||bridefatherage===undefined)
+  // {
+  //   bridefatherageerror="Please enter father age";
+  //   isValid=false;
+  // }
  
   if(bridefatherlivingstatus===""||bridefatherlivingstatus===undefined)
   {
@@ -149,22 +148,34 @@ else
           const {value:{bridefather,bridefatherreligion,bridefatherlivingstatus,bridefatherage,bridefatheroccupation,bridebridefatherchooseaddress,
           Street4,Village4,Taluk4,District4,State4,Country4,Pincode4}}=this.props;
           return(
-              <div className="form-container">
+            <div >
+            <div class="header_design w-100">
+                <div class="text-black"><div class="border-image m-4"></div> 
+                <div className="text-right">Avartar</div></div>
+               
+            </div>
+         <div class="body_UX">  
+             <div class="body_color_code m-4"><div className="img_logo"></div>
+             <br></br>
+  <br></br><br></br>
+  
+                        <div class="box m-4">
+             <div className="form-container ">
                 <br></br>
               <h1>Details of Bride Father </h1>
               <br></br>
               <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <label>Father's Name<span style={{color:"red"}}> *</span></label>
-        <input type="text" className="form-control" name="bridefather" value={value.bridefather} onChange={inputChange('bridefather')}  />
+        <input type="text" className="input" name="bridefather" value={value.bridefather} onChange={inputChange('bridefather')}  />
         <p style={{color:"red"}}>{this.state.bridefathererror}</p>
                </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
         <label>Father's Relegion<span style={{color:"red"}}> *</span></label>
-        <input type="text" className="form-control" name="bridefatherreligion" value={value.bridefatherreligion} onChange={inputChange('bridefatherreligion')}  />
+        <input type="text" className="input" name="bridefatherreligion" value={value.bridefatherreligion} onChange={inputChange('bridefatherreligion')}  />
         <p style={{color:"red"}}>{this.state.bridefatherreligionerror}</p>
                </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
         <label>Living Status<span style={{color:"red"}}> *</span></label>
         <div className="form-group">
         <input type="radio" id="alive" name="bridefatherlivingstatus" value="1" onClick={() => this.onMenuItemClicked()} checked={value.bridefatherlivingstatus==="1"}  onChange={inputChange('bridefatherlivingstatus')}/>
@@ -182,13 +193,13 @@ else
              <div class="row">
       <div class="col-md-3">
          <label>Father's Age</label>
-        <input type="number" className="form-control" name="bridefatherage" value={value.bridefatherage} onChange={inputChange('bridefatherage')}  />
+        <input type="number" className="input" name="bridefatherage" value={value.bridefatherage} onChange={inputChange('bridefatherage')}  />
         <p style={{color:"red"}}>{this.state.bridefatherageerror}</p>
          </div>
                <div class="col-md-3">
                <div id="div2" >
         <label>Father's Occupation</label>
-        <input type="text" className="form-control" name="bridefatheroccupation" value={value.bridefatheroccupation} onChange={inputChange('bridefatheroccupation')}  />
+        <input type="text" className="input" name="bridefatheroccupation" value={value.bridefatheroccupation} onChange={inputChange('bridefatheroccupation')}  />
           </div>
                </div>
                </div>
@@ -196,65 +207,71 @@ else
       <div class="row"><div class="col-md-12"> <label >Father's Address</label></div></div>
       <div class="row">
       <br></br>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <br></br>
         <input type="checkbox" id="bridebridefatherchooseaddress" name="bridebridefatherchooseaddress" value="1"  onClick={this.myFunction} checked={value.bridebridefatherchooseaddress==="1"}  onChange={inputChange('bridebridefatherchooseaddress')}/>
       <label >  &nbsp;&nbsp;Address same as Daughter&nbsp;&nbsp;</label>
        </div>
       
-        <div class="col-md-4" > 
+        <div class="col-md-3" > 
        <label>Street</label>
-        <input type="text" className="form-control" id="bs_name" name="Street4" value={this.state.Street} onChange={inputChange('Street4')}   />
+        <input type="text" className="input" id="bs_name" name="Street4" value={this.state.Street} onChange={inputChange('Street4')}   />
         </div>
-        <div class="col-md-4" > 
+        <div class="col-md-3" > 
         <label>Village</label>
-        <input type="text" className="form-control" id="bv_name" name="Village4" value={this.state.Village} onChange={inputChange('Village4')}   /></div>
+        <input type="text" className="input" id="bv_name" name="Village4" value={this.state.Village} onChange={inputChange('Village4')}   />
+        </div>
+        <div class="col-md-3">
+    <label>Taluk</label>
+     <input type="text" className="input" id="bt_name" name="Taluk4" value={this.state.Taluk} onChange={inputChange('Taluk4')}   />
+        </div>
        </div>
       
       <br></br>
       <div class="row">
-      <div class="col-md-4">
-    <label>Taluk</label>
-     <input type="text" className="form-control" id="bt_name" name="Taluk4" value={this.state.Taluk} onChange={inputChange('Taluk4')}   />
-        </div>
-        <div class="col-md-4">
+   
+        <div class="col-md-3">
         <label>District</label>
-<input type="text" className="form-control" id="bd_name" name="District4" value={this.state.District} onChange={inputChange('District4')}  />
+<input type="text" className="input" id="bd_name" name="District4" value={this.state.District} onChange={inputChange('District4')}  />
        </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
       <label>State</label>
-<input type="text" className="form-control" id="bst_name" name="State4" value={this.state.State} onChange={inputChange('State4')}  />
-         </div>      
-      </div>
-      <br></br>
-      <div class="row">
-        <div class="col-md-4">
+<input type="text" className="input" id="bst_name" name="State4" value={this.state.State} onChange={inputChange('State4')}  />
+         </div>  
+         <div class="col-md-3">
 <label>Country</label>
- <input type="text" className="form-control" id="bc_name" name="Country4" value={this.state.Country} onChange={inputChange('Country4')}   />
+ <input type="text" className="input" id="bc_name" name="Country4" value={this.state.Country} onChange={inputChange('Country4')}   />
   </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
      <label>Pincode</label>
- <input type="number" className="form-control" id="bp_name" name="Pincode4" value={this.state.Pincode} onChange={inputChange('Pincode4')}   />
+ <input type="number" className="input" id="bp_name" name="Pincode4" value={this.state.Pincode} onChange={inputChange('Pincode4')}   />
                  <p style={{color:"red"}}>{this.state.Pincode4error}</p>
        </div>
+        
       </div>
+      <br></br>
       <br></br>
       </div> 
      }
       <br></br> 
               <br></br>
-              <div className="row">
+             
+              <br></br>
+          </div>  
+          </div>
+          <div className="row">
                   <div className="col-md-6">
-                  <button className="btn btn-danger" onClick={this.back}>Back</button>
+                  <button className="pev m-4" onClick={this.back}>Previous</button>
                   </div>
                   <div className="col-md-6">
                   <div className="text-right">
-              <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+              <button className="next m-4" onClick={this.continue}>Next</button>
           </div>
                   </div>
               </div>
-              <br></br>
-          </div>          
+              <br></br><br></br>  <br></br><br></br> <br></br>
+                  </div>
+              </div></div>        
           )
       }
 }

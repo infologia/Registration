@@ -60,10 +60,10 @@ state={
 continue=e=>{
   e.preventDefault();
 const isValid=this.validateForm();
-if(isValid)
-{
+if(isValid){
   this.props.nextStep();
 }
+
 };
 
 back = e => {
@@ -221,19 +221,33 @@ return isValid;
         const {value:{Fathername,Fatherreligion,groomfatherlivingstatus,FatherAge,FatherOccupation,fatherschooseaddress,
         Street1,Village1,Taluk1,District1,State1,Country1,Pincode1}}=this.props;
         return(
-            <div className="form-container">
+          <div >
+          <div class="header_design w-100">
+              <div class="text-black"><div class="border-image m-4"></div> 
+              <div className="text-right">Avartar</div></div>
+             
+          </div>
+       <div class="body_UX">  
+           <div class="body_color_code m-4"><div className="img_logo"></div>
+           <br></br>
+<br></br><br></br>
+
+                      <div class="box m-4">
+           <div className="form-container ">
               <br></br>
             <h1>Details of Bridegroom Father </h1>
             <br></br>
             <div class="row">
-    <div class="col-md-4">
-      <label>Father's Name<span style={{color:"red"}}> *</span> </label>
-      <input type="text" className="form-control" name="Fathername" value={value.Fathername}  onChange={inputChange('Fathername')}  />
+            <div class="col-md-3">
+              <div class="form-group">
+              <label>Father's Name<span style={{color:"red"}}> *</span> </label>
+      <input type="text" className="input" name="Fathername" value={value.Fathername}  onChange={inputChange('Fathername')}  />
       <p style={{color:"red"}}>{this.state.Fathernameerror}</p>
-             </div>
-      <div class="col-md-4">
+</div>    
+           </div>
+    <div class="col-md-3">
       <label>Father's Relegion<span style={{color:"red"}}> *</span> </label>
-      <input type="text" className="form-control" name="Fatherreligion" value={value.Fatherreligion}  onChange={inputChange('Fatherreligion')}  />
+      <input type="text" className="input" name="Fatherreligion" value={value.Fatherreligion}  onChange={inputChange('Fatherreligion')}  />
       <p style={{color:"red"}}>{this.state.Fatherreligionerror}</p>
              </div>
       <div class="col-md-4">
@@ -257,14 +271,16 @@ return isValid;
       <div>
            <div class="row">
     <div class="col-md-3">
+      <div className="form-group">
        <label>Fathers Age</label>
-      <input type="number" className="form-control" name="FatherAge" value={value.FatherAge} onChange={inputChange('FatherAge')}  />
+      <input type="number" className="input" name="FatherAge" value={value.FatherAge} onChange={inputChange('FatherAge')}  />
       <p style={{color:"red"}}>{this.state.FatherAgeerror}</p>
+      </div>
        </div>
              <div class="col-md-3">
              <div id="div2" >
       <label>Father's Occupation</label>
-      <input type="text" className="form-control" name="FatherOccupation" value={value.FatherOccupation} onChange={inputChange('FatherOccupation')}  />
+      <input type="text" className="input" name="FatherOccupation" value={value.FatherOccupation} onChange={inputChange('FatherOccupation')}  />
       <p style={{color:"red"}}>{this.state.FatherOccupationerror}</p>
              </div>
              </div>
@@ -274,75 +290,81 @@ return isValid;
     <div class="row"><div class="col-md-12"> <label >Father's Address</label></div></div>
     <div class="row">
     <br></br>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <br></br>
       <input type="checkbox" id="fatherschooseaddress" name="fatherschooseaddress" value="1"  onClick={this.myFunction} checked={value.fatherschooseaddress==="1"}  onChange={inputChange('fatherschooseaddress')}/>
       <label >  &nbsp;&nbsp;Address same as Son&nbsp;&nbsp;</label>
     </div>
     
-      <div class="col-md-4"  > 
+      <div class="col-md-3"  > 
+      <div class="form-group">
       <label>Street</label>
-      <input type="text" id="s_name" className="form-control" name="Street1" value={this.state.Street} onChange={inputChange('Street1')}   />
+      <input type="text" id="s_name" className="input" name="Street1" value={this.state.Street} onChange={inputChange('Street1')}   />
       <p style={{color:"red"}}>{this.state.Street1error}</p>
       </div>
-      <div class="col-md-4"  > 
+      </div>
+      <div class="col-md-3"  > 
       <label>Village</label>
-      <input type="text" id="v_name" className="form-control" name="Village1" value={this.state.Village} onChange={inputChange('Village1')}   />
+      <input type="text" id="v_name" className="input" name="Village1" value={this.state.Village} onChange={inputChange('Village1')}   />
       <p style={{color:"red"}}>{this.state.Village1error}</p>
+       </div>
+       <div class="col-md-3"  > 
+      <label>Taluk</label>
+      <input type="text" id="t_name" className="input" name="Taluk1" value={this.state.Taluk} onChange={inputChange('Taluk1')}   />
+      <p style={{color:"red"}}>{this.state.Taluk1error}</p>
        </div>
       </div>
     
     <br></br>
     <div  id="div5">
     <div class="row">
-    <div class="col-md-4"  > 
-      <label>Taluk</label>
-      <input type="text" id="t_name" className="form-control" name="Taluk1" value={this.state.Taluk} onChange={inputChange('Taluk1')}   />
-      <p style={{color:"red"}}>{this.state.Taluk1error}</p>
-       </div>
-       <div class="col-md-4"  > 
+   
+       <div class="col-md-3"  > 
       <label>District</label>
-      <input type="text" id="d_name" className="form-control" name="District1" value={this.state.District} onChange={inputChange('District1')}  />
+      <input type="text" id="d_name" className="input" name="District1" value={this.state.District} onChange={inputChange('District1')}  />
       <p style={{color:"red"}}>{this.state.District1error}</p>
        </div>
-       <div class="col-md-4"  > 
+       <div class="col-md-3"  > 
       <label>State</label>
-      <input type="text" id="st_name" className="form-control" name="State1" value={this.state.State} onChange={inputChange('State1')}  />
+      <input type="text" id="st_name" className="input" name="State1" value={this.state.State} onChange={inputChange('State1')}  />
       <p style={{color:"red"}}>{this.state.State1error}</p>
        </div>
-   </div>
-   </div>   
-    <br></br>
-    <div  id="div6">
-    <div class="row">
-    <div class="col-md-4"  > 
+         <div class="col-md-3"  > 
       <label>Country</label>
-      <input type="text" id="c_name" className="form-control" name="Country1" value={this.state.Country} onChange={inputChange('Country1')}   />
+      <input type="text" id="c_name" className="input" name="Country1" value={this.state.Country} onChange={inputChange('Country1')}   />
       <p style={{color:"red"}}>{this.state.Country1error}</p>
        </div>
-       <div class="col-md-4"  > 
+       <div class="col-md-3"  > 
       <label>Pincode</label>
-      <input type="number" id="p_name" className="form-control" name="Pincode1" value={this.state.Pincode} onChange={inputChange('Pincode1')}   />
+      <input type="number" id="p_name" className="input" name="Pincode1" value={this.state.Pincode} onChange={inputChange('Pincode1')}   />
                <p style={{color:"red"}}>{this.state.Pincode1error}</p>
        </div>
-    </div>
-    </div>
+   
+   </div>
+   </div>   
+  
     </div>
    }
     </div>  
     <br></br>    
-    <div className="row">
+   
+            <br></br>
+        </div> 
+         </div>
+         <div className="row">
                 <div className="col-md-6">
-                <button className="btn btn-danger" onClick={this.back}>Back</button>
+                <button className="pev  m-4" onClick={this.back}>Previous</button>
                 </div>
                 <div className="col-md-6">
                 <div className="text-right">
-            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+            <button className="next  m-4" onClick={this.continue}>Next</button>
         </div>
                 </div>
             </div>
-            <br></br>
-        </div>     
+            <br></br><br></br>  <br></br><br></br> <br></br>
+        </div>   
+        </div>
+        </div>
         )
     }
 }

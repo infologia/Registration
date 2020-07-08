@@ -62,9 +62,7 @@ export class Attachements extends Component
     
         submit = e =>{
           e.preventDefault();
-          const isValid=this.validateForm();
-      if(isValid){
-        const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
+     const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
           maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,
           Taluk,Fathername,FatherAge,FatherOccupation,Fatherreligion,groomfatherlivingstatus,fatherschooseaddress,Street1,
           Village1,Taluk1,District1,State1,Country1,Pincode1,MotherName,Motherreligion,groommotherlivingstatus,MotherAge,MotherOccupation,motherchooseaddress,
@@ -108,7 +106,15 @@ const formData = new FormData();
         formData.append('Fathername',Fathername);
         formData.append('Fatherreligion',Fatherreligion);
         formData.append('Livingstatus','1');
-        formData.append('FatherAge',FatherAge);
+        formData.append('FLivingStatus',groomfatherlivingstatus);
+        if(groomfatherlivingstatus==="1")
+        {
+          formData.append('FatherAge',FatherAge);
+        }
+        else{
+          formData.append('FatherAge',0);
+        }
+        
         formData.append('FatherOccupation',FatherOccupation);
 
         if(fatherschooseaddress==="1")
@@ -132,12 +138,18 @@ const formData = new FormData();
           formData.append('Fatheraddress.Pincode',Pincode1);
         }
        
-
-        formData.append('FLivingStatus',groomfatherlivingstatus);
         formData.append('MotherName',MotherName);
         formData.append('Motherreligion',Motherreligion);
         formData.append('MLivingStatus',groommotherlivingstatus);
-        formData.append('MotherAge',MotherAge);
+        if(groommotherlivingstatus==="1")
+        {
+          formData.append('MotherAge',MotherAge);
+        }
+        else
+        {
+          formData.append('MotherAge',0);
+        }
+       
         formData.append('MotherOccupation',MotherOccupation);
 
 if(motherchooseaddress==="1"&&fatherschooseaddress==="1")
@@ -192,7 +204,14 @@ formData.append('Motheraddress.Pincode',Pincode2);
         formData.append('BrideFathername',bridefather);
         formData.append('BrideFatherreligion',bridefatherreligion);
         formData.append('BrideLivingStatus','1');
-        formData.append('BrideFatherAge',bridefatherage);
+        formData.append('BrideFLivingStatus',bridefatherlivingstatus);
+        if(bridefatherlivingstatus==="1"){
+          formData.append('BrideFatherAge',bridefatherage);
+        }
+        else{
+          formData.append('BrideFatherAge',0);
+        }
+       
         formData.append('BrideFatherOccupation',bridefatheroccupation);
 
 if(bridebridefatherchooseaddress==="1")
@@ -215,11 +234,17 @@ formData.append('BrideFatheraddress.Street',Street4);
         formData.append('BrideFatheraddress.Pincode',Pincode4);
 }
       
-        formData.append('BrideFLivingStatus',bridefatherlivingstatus);
+       
         formData.append('BrideMotherName',bridemother);
         formData.append('BrideMotherreligion',bridemotherreligion);
         formData.append('BrideMLivingStatus',bridemotherlivingstatuss);
-        formData.append('BrideMotherAge',bridemotherage);
+        if(bridemotherlivingstatuss==="1"){
+          formData.append('BrideMotherAge',bridemotherage);
+        }
+        else{
+          formData.append('BrideMotherAge',0);
+        }
+        
         formData.append('BrideMotherOccupation',bridemotheroccupation);
 
 if(bridemotherchooseaddress==="1"&&bridebridefatherchooseaddress==="1")
@@ -353,8 +378,7 @@ fetch(url,{
           
             }
       })
-      })  
-      }     
+      })      
       };
 
 
@@ -598,8 +622,20 @@ fetch(url,{
               BrideDivorcecopy,BrideMarriageertificate,BrideSpousedeadcertificate,BrideSinglestatuscertificate,
               Invitation,Marriagereceipt,Marriagereciptdoc}}=this.props;
             return(
-                <div className="form-container">
-                <br></br>
+              <div >
+              <div class="header_design w-100">
+                  <div class="text-black"><div class="border-image m-4"></div> 
+                  <div className="text-right">Avartar</div></div>
+                 
+              </div>
+           <div class="body_UX">  
+               <div class="body_color_code m-4"><div className="img_logo"></div>
+               <br></br>
+    <br></br><br></br>
+    
+                          <div class="box m-4">
+               <div className="form-container ">
+                  <br></br>
               <h1>Attachements</h1>
       
               <div class="row">
@@ -783,7 +819,7 @@ fetch(url,{
                   <div class="col-md-3">
                   <div class="form-group">
      <label>Marriage Receipt<span style={{color:"red"}}> *</span></label>
-     <select id="Marriagereceipt" className="form-control" name="Marriagereceipt" onChange={this.onChangeHandler}>
+     <select id="Marriagereceipt" className="input" name="Marriagereceipt" onChange={this.onChangeHandler}>
     <option value="0">-Select Value-</option>
       <option value="1">Hall Receipt</option>
       <option value="2">Temple Receipt</option>
@@ -801,13 +837,16 @@ fetch(url,{
      </div>
                   </div>
             </div>
-            <div className="row">
+         </div>
+          </div>
+      
+          <div className="row">
                   <div className="col-md-6">
-                  <button className="btn btn-danger" onClick={this.back}>Back</button>
+                  <button className="pev m-4" onClick={this.back}>Back</button>
                   </div>
                   <div className="col-md-6">
                   <div className="text-right">
-                  <button className="btn btn-primary" onClick={this.submit}>Submit</button>
+                  <button className="next m-4" onClick={this.submit}>Submit</button>
           </div>
                   </div>
               </div>
@@ -825,8 +864,13 @@ fetch(url,{
                 <div class="alert" >
   <span class="closebtn" onClick={this.closeform2}>&times;</span> 
   The server was unavailable
-</div></div>
+</div>
+</div><br></br><br></br>  <br></br><br></br> <br></br>
+        
           </div>
+          </div>
+          </div>
+
             );
         }
 }

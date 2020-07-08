@@ -85,10 +85,10 @@ else
       continue=e=>{
         e.preventDefault();
       const isValid=this.validateForm();
-     if(isValid){
-      this.props.nextStep(); 
-    }
-      };
+      if(isValid){
+        this.props.nextStep();
+      } 
+     };
 
       validateForm() {
         let isValid = true;
@@ -265,22 +265,34 @@ let Country2error="";
           const {value:{MotherName,Motherreligion,groommotherlivingstatus,MotherAge,MotherOccupation,motherchooseaddress,
           Street2,Village2,Taluk2,District2,State2,Country2,Pincode2}}=this.props;
           return(
-              <div className="form-container">
+            <div >
+            <div class="header_design w-100">
+                <div class="text-black"><div class="border-image m-4"></div> 
+                <div className="text-right">Avartar</div></div>
+               
+            </div>
+         <div class="body_UX">  
+             <div class="body_color_code m-4"><div className="img_logo"></div>
+             <br></br>
+  <br></br><br></br>  
+  
+                        <div class="box m-4">
+             <div className="form-container ">
                 <br></br>
               <h1>Details of Bridegroom Mother </h1>
               <br></br>
               <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
     <label>Mother's Name<span style={{color:"red"}}> *</span> </label>
-    <input type="text" className="form-control" name="MotherName" value={value.MotherName}  onChange={inputChange('MotherName')}  />
+    <input type="text" className="input" name="MotherName" value={value.MotherName}  onChange={inputChange('MotherName')}  />
     <p style={{color:"red"}}>{this.state.MotherNameerror}</p>
              </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
     <label>Mother's Relegion<span style={{color:"red"}}> *</span> </label>
-    <input type="text" className="form-control" name="Motherreligion" value={value.Motherreligion} onChange={inputChange('Motherreligion')} />
+    <input type="text" className="input" name="Motherreligion" value={value.Motherreligion} onChange={inputChange('Motherreligion')} />
     <p style={{color:"red"}}>{this.state.Motherreligionerror}</p>
              </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
     <label>Living Status<span style={{color:"red"}}> *</span> </label>
       <div className="form-group">
       <input type="radio" id="alive" name="groommotherlivingstatus" value="1"  onClick={() => this.onMenuItemClicked()} checked={value.groommotherlivingstatus==="1"}  onChange={inputChange('groommotherlivingstatus')}/>
@@ -296,14 +308,14 @@ let Country2error="";
     { this.state.showHideDemo1 && 
     <div id="div2" >
     <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
     <label>Mother's Age</label>
-    <input type="text" className="form-control" name="MotherAge" value={value.MotherAge} onChange={inputChange('MotherAge')}  />
+    <input type="text" className="input" name="MotherAge" value={value.MotherAge} onChange={inputChange('MotherAge')}  />
     <p style={{color:"red"}}>{this.state. MotherAgeerror}</p>
              </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
     <label>Mother's Occupation</label>
-    <input type="text" className="form-control" name="MotherOccupation" value={value.MotherOccupation} onChange={inputChange('MotherOccupation')}  />
+    <input type="text" className="input" name="MotherOccupation" value={value.MotherOccupation} onChange={inputChange('MotherOccupation')}  />
     <p style={{color:"red"}}>{this.state.MotherOccupationerror}</p>
              </div>   
     </div>
@@ -311,70 +323,76 @@ let Country2error="";
     <div class="row"><div class="col-md-12"> <label >Mother's Address</label></div></div>
     <div class="row">
     <br></br>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <br></br>
       <input type="radio" id="sonadrress" name="motherchooseaddress" value="1"  onClick={this.sonaddress} checked={value.motherchooseaddress==="1"}  onChange={inputChange('motherchooseaddress')}/>
-      <label >  &nbsp;&nbsp;Address same as Son&nbsp;&nbsp;</label>
+      <label >  &nbsp;&nbsp;Address same as Son&nbsp;&nbsp;</label><br></br>
       <input type="radio" id="huaddress"  name="motherchooseaddress" value="2"  onClick={this.husaddress} checked={value.motherchooseaddress==="2"}  onChange={inputChange('motherchooseaddress')}/>
       <label >&nbsp;&nbsp;Address same as Husband</label>
     </div>
-      <div class="col-md-4"> 
+      <div class="col-md-3"> 
       <label>Street </label>
-            <input type="text" className="form-control" id="gs_name" name="Street2" value={this.state.Street} onChange={inputChange('Street2')}   />
+            <input type="text" className="input" id="gs_name" name="Street2" value={this.state.Street} onChange={inputChange('Street2')}   />
             <p style={{color:"red"}}>{this.state. Street2error}</p>
       </div>
-      <div class="col-md-4"> 
+      <div class="col-md-3"> 
         <label>Village </label>
-              <input type="text" className="form-control" id="gv_name" name="Village2" value={this.state.Village} onChange={inputChange('Village2')}   />
+              <input type="text" className="input" id="gv_name" name="Village2" value={this.state.Village} onChange={inputChange('Village2')}   />
               <p style={{color:"red"}}>{this.state. Village2error}</p>
       </div>
-    </div>
-    <br></br>
-    <div class="row">
-    <div class="col-md-4">
+      <div class="col-md-3">
     <label>Taluk </label>
-   <input type="text" className="form-control" name="Taluk2" id="gt_name" value={this.state.Taluk} onChange={inputChange('Taluk2')}   />
+   <input type="text" className="input" name="Taluk2" id="gt_name" value={this.state.Taluk} onChange={inputChange('Taluk2')}   />
    <p style={{color:"red"}}>{this.state. Taluk2error}</p>
       </div>
-      <div class="col-md-4">
-<label>District </label>
- <input type="text" className="form-control" id="gd_name" name="District2" value={this.state.District} onChange={inputChange('District2')}  />
- <p style={{color:"red"}}>{this.state. District2error}</p>
-      </div>
-      <div class="col-md-4">
-     <label>State </label>
-                <input type="text" id="gst_name" className="form-control" name="State2" value={this.state.State} onChange={inputChange('State2')}   />
-                <p style={{color:"red"}}>{this.state. State2error}</p>
-       </div>
+    
     </div>
     <br></br>
     <div class="row">
-      <div class="col-md-4">
+     <div class="col-md-3">
+<label>District </label>
+ <input type="text" className="input" id="gd_name" name="District2" value={this.state.District} onChange={inputChange('District2')}  />
+ <p style={{color:"red"}}>{this.state. District2error}</p>
+      </div>
+      <div class="col-md-3">
+     <label>State </label>
+                <input type="text" id="gst_name" className="input" name="State2" value={this.state.State} onChange={inputChange('State2')}   />
+                <p style={{color:"red"}}>{this.state. State2error}</p>
+       </div>
+       <div class="col-md-3">
      <label>Country</label>
-      <input type="text" className="form-control" id="gc_name" name="Country2" value={this.state.Country} onChange={inputChange('Country2')}   />
+      <input type="text" className="input" id="gc_name" name="Country2" value={this.state.Country} onChange={inputChange('Country2')}   />
       <p style={{color:"red"}}>{this.state. Country2error}</p>
        </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
 <label>Pincode</label>
-   <input type="text" className="form-control" id="gp_name" name="Pincode2" value={this.state.Pincode} onChange={inputChange('Pincode2')}   />
+   <input type="text" className="input" id="gp_name" name="Pincode2" value={this.state.Pincode} onChange={inputChange('Pincode2')}   />
                <p style={{color:"red"}}>{this.state.Pincode2error}</p>
       </div>
+   
     </div>
-    </div>
+    <br></br>
+   </div>
    }
     <br></br>
-    <div className="row">
+        <br></br>
+          </div> 
+
+           </div>  
+          
+           <div className="row">
                 <div className="col-md-6">
-                <button className="btn btn-danger" onClick={this.back}>Back</button>
+                <button className="pev m-4" onClick={this.back}>Previous</button>
                 </div>
                 <div className="col-md-6">
                 <div className="text-right">
-            <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+            <button className="next m-4" onClick={this.continue}>Next</button>
         </div>
                 </div>
-            </div>
-            <br></br>
-          </div>   
+            </div><br></br><br></br>  <br></br><br></br> <br></br>
+         </div> 
+              </div> 
+                </div>   
                
           )
       }

@@ -34,6 +34,7 @@ inputChange=input=>e=>{
 
     render()
     {
+  
         const {step} =this.state;
         const {Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
                 maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,

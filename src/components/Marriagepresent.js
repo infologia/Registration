@@ -13,8 +13,8 @@ export class Marriagepresent extends Component
         e.preventDefault();
       const isValid=this.validateForm();
       if(isValid){
-      this.props.nextStep(); 
-    }
+        this.props.nextStep();
+      }
     }
 
     back = e => {
@@ -63,8 +63,20 @@ export class Marriagepresent extends Component
     const {value,inputChange}=this.props;
     const {value:{  bridemotherpresent,  bridefatherpresent,groommother,groomfather}}=this.props;
     return(
-        <div className="form-container">
-        <br></br>
+      <div >
+      <div class="header_design w-100">
+          <div class="text-black"><div class="border-image m-4"></div> 
+          <div className="text-right">Avartar</div></div>
+         
+      </div>
+   <div class="body_UX">  
+       <div class="body_color_code m-4"><div className="img_logo"></div>
+       <br></br>
+<br></br><br></br>
+
+                  <div class="box m-4">
+       <div className="form-container ">
+          <br></br>
       <h1>Parents pysical  presence  status to sub-register office,at the time of registration</h1>
       <div class="row"> <div class="col-md-3"></div>
                   <div class="col-md-3"><label>Bride's Mother<span style={{color:"red"}}> *</span></label></div>
@@ -115,18 +127,24 @@ export class Marriagepresent extends Component
      </div>  
    
      <br></br>
-        <div className="row">
+       
+              <br></br>
+</div>
+ </div>
+ <div className="row">
                   <div className="col-md-6">
-                  <button className="btn btn-danger" onClick={this.back}>Back</button>
+                  <button className="pev m-4" onClick={this.back}>Previous</button>
                   </div>
                   <div className="col-md-6">
                   <div className="text-right">
-              <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+              <button className="next  m-4" onClick={this.continue}>Next</button>
           </div>
                   </div>
               </div>
-              <br></br>
-</div>
+              <br></br><br></br>  <br></br><br></br> <br></br>
+  </div> 
+  </div> 
+  </div>
     );
 }
 }

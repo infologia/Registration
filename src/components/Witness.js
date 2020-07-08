@@ -21,8 +21,8 @@ export class Witness extends Component
       e.preventDefault();
       const isValid=this.validateForm();
       if(isValid){
-      this.props.nextStep(); 
-    }
+        this.props.nextStep(); 
+      }
     };
 
     back = e => {
@@ -32,12 +32,12 @@ export class Witness extends Component
 
   validateForm() {
     let isValid = true;
-    const {value:{  relationship,witnessname,gfatherhusbandname,fathhusname,Street8,Village8,Taluk8,District8,State8,
+    const {value:{  relationship,witnessname,fatherhusbandname,fathhusname,Street8,Village8,Taluk8,District8,State8,
       Country8,Pincode8,idcard}}=this.props;
 
 let   relationshiperror="";
 let   witnessnameerror="";
-let gfatherhusbandnameerror="";
+let fatherhusbandnameerror="";
 let fathhusnameerror="";
 let Street8error="";
 let Taluk8error="";
@@ -66,9 +66,9 @@ if(  witnessname===""||  witnessname===undefined)
   isValid=false;
 }
 
-if(  gfatherhusbandname===""||  gfatherhusbandname===undefined)
+if(  fatherhusbandname===""||  fatherhusbandname===undefined)
 {
-  gfatherhusbandnameerror="Please select value";
+  fatherhusbandnameerror="Please select value";
   isValid=false;
 }
 
@@ -78,7 +78,50 @@ if(  idcard===""||  idcard===undefined)
   isValid=false;
 }
 
-this.setState({relationshiperror,witnessnameerror,gfatherhusbandnameerror,fathhusnameerror,Street8error,Taluk8error,
+
+if(  Street8===""||  Street8===undefined)
+{
+  Street8error="Please enter street";
+  isValid=false;
+}
+
+if(  Taluk8===""||  Taluk8===undefined)
+{
+  Taluk8error="Please enter taluk";
+  isValid=false;
+}
+
+if(  Village8===""||  Village8===undefined)
+{
+  Village8error="Please enter village";
+  isValid=false;
+}
+
+if(  District8===""||  District8===undefined)
+{
+  District8error="Please enter district";
+  isValid=false;
+}
+
+if(  State8===""||  State8===undefined)
+{
+  State8error="Please enter state";
+  isValid=false;
+}
+
+if(  Country8===""||  Country8===undefined)
+{
+  Country8error="Please enter country";
+  isValid=false;
+}
+
+if(  Pincode8===""||  Pincode8===undefined)
+{
+  Pincode8error="Please enter pincode";
+  isValid=false;
+}
+
+this.setState({relationshiperror,witnessnameerror,fatherhusbandnameerror,Street8error,Taluk8error,
   Village8error,District8error,State8error,Country8error,Pincode8error,idcarderror	})
 return isValid;
 
@@ -90,13 +133,25 @@ return isValid;
         const {value,inputChange}=this.props;
         const {value:{relationship,witnessname,fatherhusbandname,fathhusname,Street8,Village8,Taluk8,District8,State8,Country8,Pincode8,idcard,idcardno}}=this.props;
         return(
-            <div className="form-container">
-            <br></br>
+          <div >
+          <div class="header_design w-100">
+              <div class="text-black"><div class="border-image m-4"></div> 
+              <div className="text-right">Avartar</div></div>
+             
+          </div>
+       <div class="body_UX">  
+           <div class="body_color_code m-4"><div className="img_logo"></div>
+           <br></br>
+<br></br><br></br>
+
+                      <div class="box m-4">
+           <div className="form-container ">
+              <br></br>
           <h1>Witness</h1>
           <div class="row">
       <div class="col-md-3">
       <label>Relationship<span style={{color:"red"}}> *</span> </label>
-      <select id="beforemarr" className="form-control" name="relationship" value={value.relationship} onChange={inputChange('relationship')} >
+      <select id="beforemarr" className="input" name="relationship" value={value.relationship} onChange={inputChange('relationship')} >
 <option value="0">Select value</option>
   <option value="1">BRIDE'S MOTHER</option>
   <option value="2">BRIDES FATHER</option>
@@ -114,23 +169,19 @@ return isValid;
       </div>
       <div class="col-md-3">
       <label>Name<span style={{color:"red"}}> *</span> </label>
-      <input type="text" className="form-control" name="witnessname" value={value.witnessname} onChange={inputChange('witnessname')}/>
+      <input type="text" className="input" name="witnessname" value={value.witnessname} onChange={inputChange('witnessname')}/>
       <p style={{color:"red"}}>{this.state.witnessnameerror}</p>
          </div>
       <div class="col-md-3">
       <label>Father's Name/Husband's Name</label>
-      <select id="beforemarr" className="form-control" value={value.fatherhusbandname} onChange={inputChange('fatherhusbandname')}>
-<option value="0">Select value</option>
+      <select  className="input" name="fatherhusbandname" value={value.fatherhusbandname} onChange={inputChange('fatherhusbandname')} >
+      <option value="0">Select value</option>
   <option value="1">Father's Name</option>
   <option value="2">Husband's Name</option>
-</select>
+</select> 
+
 <p style={{color:"red"}}>{this.state.fatherhusbandnameerror}</p>
       </div>
-      <div class="col-md-3">
-      <label>Name<span style={{color:"red"}}> *</span> </label>
-      <input type="text" className="form-control" name="fathhusname" value={value.fathhusname} onChange={inputChange('fathhusname')}/>
-      <p style={{color:"red"}}>{this.state.fathhusnameerror}</p>
-         </div>
     </div>
     <div class="col-md-12"> 
     <h6 className="text-left"><br></br>Address </h6></div>
@@ -138,28 +189,28 @@ return isValid;
 <div class="col-md-3">
               <div class="form-group">
 <label>Street<span style={{color:"red"}}> *</span> </label>
-<input type="text" name="Street8" value={value.Street8} onChange={inputChange('Street8')} className="form-control"  />
+<input type="text" name="Street8" value={value.Street8} onChange={inputChange('Street8')} className="input"  />
 <p style={{color:"red"}}>{this.state.Street8error}</p>
  </div>
               </div>
               <div class="col-md-3">
               <div class="form-group">
 <label>Village<span style={{color:"red"}}> *</span> </label>
-<input type="text" name="Village8" value={value.Village8} onChange={inputChange('Village8')} className="form-control"  />
+<input type="text" name="Village8" value={value.Village8} onChange={inputChange('Village8')} className="input"  />
 <p style={{color:"red"}}>{this.state.Village8error}</p>
  </div>
               </div>
              <div class="col-md-3">
               <div class="form-group">
   <label>Taluk<span style={{color:"red"}}> *</span> </label>
-  <input type="text" name="Taluk8" value={value.Taluk8} onChange={inputChange('Taluk8')} className="form-control"  />
+  <input type="text" name="Taluk8" value={value.Taluk8} onChange={inputChange('Taluk8')} className="input"  />
   <p style={{color:"red"}}>{this.state.Taluk8error}</p>
   </div>
               </div>
               <div class="col-md-3">
               <div class="form-group">
   <label>District<span style={{color:"red"}}> *</span> </label>
-  <input type="text" name="District8" value={value.District8} onChange={inputChange('District8')} className="form-control"/>
+  <input type="text" name="District8" value={value.District8} onChange={inputChange('District8')} className="input"/>
   <p style={{color:"red"}}>{this.state.District8error}</p>
          </div>
               </div>            
@@ -168,27 +219,27 @@ return isValid;
 <div class="col-md-3">
               <div class="form-group">
               <label>State<span style={{color:"red"}}> *</span> </label>
-         <input type="text" className="form-control"  name="State8" value={value.State8} onChange={inputChange('State8')}></input>
+         <input type="text" className="input"  name="State8" value={value.State8} onChange={inputChange('State8')}></input>
          <p style={{color:"red"}}>{this.state.State8error}</p>
 </div>
               </div>
               <div class="col-md-3">
               <label>Country<span style={{color:"red"}}> *</span> </label>
-              <input type="text" className="form-control"  name="Country8" value={value.Country8} onChange={inputChange('Country8')}></input>
+              <input type="text" className="input"  name="Country8" value={value.Country8} onChange={inputChange('Country8')}></input>
               <p style={{color:"red"}}>{this.state.Country8error}</p>
               </div>
               <div class="col-md-3">
               <div class="form-group">
 <label>Pincode<span style={{color:"red"}}> *</span> </label>
-<input type="text" name="Pincode8" value={value.Pincode8} onChange={inputChange('Pincode8')}  className="form-control" />
+<input type="text" name="Pincode8" value={value.Pincode8} onChange={inputChange('Pincode8')}  className="input" />
 <p style={{color:"red"}}>{this.state.Pincode8error}</p>
          </div>
               </div>           
 </div>  
               <div class="row">              
-                <div class="col-md-4">
+                <div class="col-md-3">
                 <label>Identity Card No<span style={{color:"red"}}> *</span> </label>
-                <select id="beforemarr" className="form-control" name="idcard"  onChange={inputChange('idcard')}>
+                <select id="beforemarr" className="input" name="idcard"  onChange={inputChange('idcard')}>
 <option value="0">Select proof</option>
   <option value="1">PASSPORT</option>
   <option value="2">AADHAAR</option>
@@ -197,24 +248,30 @@ return isValid;
 </select>
 <p style={{color:"red"}}>{this.state.idcarderror}</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                 <label></label>
                 <br></br>
-                <input type="text" className="form-control" placeholder="Enter id number" name="idcardno" value={value.idcardno} onChange={inputChange('idcardno')} />       
+                <input type="text" className="input" placeholder="Enter id number" name="idcardno" value={value.idcardno} onChange={inputChange('idcardno')} />       
                 <p style={{color:"red"}}>{this.state.idcardnoerror}</p>
                 </div>
               </div>
               <br></br>
-              <div className="row">
+             </div>
+    </div>
+    <div className="row">
                   <div className="col-md-6">
-                  <button className="btn btn-danger" onClick={this.back}>Back</button>
+                  <button className="pev m-4" onClick={this.back}>Previous</button>
                   </div>
                   <div className="col-md-6">
                   <div className="text-right">
-              <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+              <button className="next m-4" onClick={this.continue}>Next</button>
           </div>
                   </div>
-              </div>
+              </div><br></br><br></br>  <br></br><br></br> <br></br>
+   
+    </div>
+    </div>
+
     </div>
         );
     }
