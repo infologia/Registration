@@ -850,12 +850,10 @@ fetch(url,{
           </div>
                   </div>
               </div>
-              <div id="errormsg1"  style={{display:"none"}}>
-                <div class="alert" >
-  <span class="closebtn" onClick={this.closeform}>&times;</span> 
-  The request was invalid
-</div></div>
-<div id="errormsg2"  style={{display:"none"}}>
+              <div className="row">
+                <div className="col-md-4"></div>
+                <div className="col-md-4">
+                <div id="errormsg2"  style={{display:"none"}}>
                 <div class="alert" >
   <span class="closebtn" onClick={this.closeform1}>&times;</span> 
   The request was not completed due to an internal error on the server side
@@ -865,6 +863,15 @@ fetch(url,{
   <span class="closebtn" onClick={this.closeform2}>&times;</span> 
   The server was unavailable
 </div>
+
+                </div>
+                <div className="col-md-4"></div>
+              </div>
+              <div id="errormsg1"  style={{display:"none"}}>
+                <div class="alert" >
+  <span class="closebtn" onClick={this.closeform}>&times;</span> 
+  The request was invalid
+</div></div>
 </div><br></br><br></br>  <br></br><br></br> <br></br>
         
           </div>

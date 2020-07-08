@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';        
 
 
 export  class Bridegroom extends Component
@@ -9,7 +10,7 @@ export  class Bridegroom extends Component
     const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
       maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,Taluk}}=this.props;
    this.state={
-    calage:"0"
+    calage:"0",
    }
   
   if(DOB!==""&&DOB!==undefined)
@@ -63,6 +64,11 @@ Passportnoerror:"",
       e.preventDefault();
       this.props.prevStep();
   };
+
+  handleClick = () => {
+ 
+    this.setState({referrer: '/login'});
+}
 
     validateForm=()=>{
       let isValid=true;
@@ -334,10 +340,9 @@ return isValid;
   
     render()
     {
-        const {value,inputChange}=this.props;
+       const {value,inputChange}=this.props;
         const {value:{Dateofmarriage,Name,Nationality,ResidentialStatus,Religion,Caste,DOB,Employername,Designation,
           maritalstatus,Mobileno,whatsappnumber,emailaddress,Passportno,Street,Village,District,State,Country,Pincode,Taluk}}=this.props;
-      
         return(
           <div >
           <div class="header_design w-100">
@@ -544,11 +549,9 @@ return isValid;
         </div>
         <br></br>
         <div className="img_logo" style={{marginBottom:"37px"}}></div>
-       
-         </div>
+        </div>
           </div>  
             </div>   
-       
        )
     }
 }

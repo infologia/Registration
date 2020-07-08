@@ -209,7 +209,7 @@ handleChange(e) {
                        </div>
                        <div className="col-md-6">
                        <div className="text-right">
-                       <Link className="small" to={"login"}>Login</Link>
+                       <Link className="small" to={"/login"}>Login</Link>
                      </div>
                        </div>
                      </div>
